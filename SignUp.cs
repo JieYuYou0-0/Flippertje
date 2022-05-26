@@ -10,20 +10,20 @@ namespace GhibliFlix
     {
         static SignUp reg = new SignUp();
 
-        public static void SignUpUser(Members.MembersSchema data)
+        public static void SignUpUser(Members.CustomerDetails data)
         {
             //Read existing JSON data
             var jsonData = File.ReadAllText(@"data\members.json");
 
             //Deserialize data and if not exist, create new list
-            List<Members.MembersSchema> jsonList;
+            List<Members.CustomerDetails> jsonList;
             try
             {
-                jsonList = JsonSerializer.Deserialize<List<Members.MembersSchema>>(jsonData);
+                jsonList = JsonSerializer.Deserialize<List<Members.CustomerDetails>>(jsonData);
             }
             catch
             {
-                jsonList = new List<Members.MembersSchema>();
+                jsonList = new List<Members.CustomerDetails>();
             }
 
             //Add data
@@ -52,7 +52,7 @@ namespace GhibliFlix
             }
             return true;
         }
-
+        //Checking credit card number
         public static bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
