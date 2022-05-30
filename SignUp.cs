@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Text.Json;
+using GhibliFlix.json_class;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace GhibliFlix
 {
@@ -13,7 +17,7 @@ namespace GhibliFlix
         public static void SignUpUser(Members.CustomerDetails data)
         {
             //Read existing JSON data
-            var jsonData = File.ReadAllText(@"data\members.json");
+            var jsonData = File.ReadAllText(@"json_files\members.json");
 
             //Deserialize data and if not exist, create new list
             List<Members.CustomerDetails> jsonList;
@@ -30,10 +34,10 @@ namespace GhibliFlix
             jsonList.Add(data);
 
             jsonData = JsonSerializer.Serialize(jsonList);
-            File.WriteAllText(@"data\members.json", jsonData);
+            File.WriteAllText(@"json_files\members.json", jsonData);
         }
 
-        public static bool VerifyUser(string uuid)
+        public static bool VerifyUser(string passwordCheck)
         {
             Console.WriteLine("Type STOP to cancel verifying your account");
             string input = Console.ReadLine();
@@ -41,7 +45,7 @@ namespace GhibliFlix
             {
                 return false;
             }
-            while (input != uuid)
+            while (input != passwordCheck)
             {
                 Console.WriteLine("It looks like your given code is not valid. Please try again!");
                 input = Console.ReadLine();
