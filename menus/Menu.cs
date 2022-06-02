@@ -8,43 +8,43 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public abstract class Menu
+    internal abstract class Menu
     {
-        public Action PreviousStep { get; set; }
-        public Action PreviousMenu { get; set; }
+        internal Action PreviousStep { get; set; }
+        internal Action PreviousMenu { get; set; }
 
-        private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
+        private readonly List<Tuple<Action, ConsoleKey>> commands = new List<Tuple<Action, ConsoleKey>>();
 
 
-        public virtual void Init()
+        internal virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
         }
 
-        public void AddMenuOption(Action function, ConsoleKey keyPress, string display)
+        internal void AddMenuOption(Action function, ConsoleKey keyPress)
         {
-            commands.Add(Tuple.Create(function, keyPress, display));
+            commands.Add(Tuple.Create(function, keyPress));
         }
 
-        public void ShowMenu()
+        internal void ShowMenu()
         {
-            WriteMenu();
+            //WriteMenu();
             ReadOptionInput();
         }
 
-        private void WriteMenu()
-        {
-            //Console.WriteLine();
-            foreach (var command in commands)
-            {
-                if (command.Item3 != "")
-                {
-                    Console.WriteLine(command.Item3);
-                }
-            }
-            //Console.WriteLine();
-        }
-        public void ReadOptionInput()
+        //private void WriteMenu()
+        //{
+        //    //Console.WriteLine();
+        //    foreach (var command in commands)
+        //    {
+        //        if (command.Item3 != "")
+        //        {
+        //            Console.WriteLine(command.Item3);
+        //        }
+        //    }
+        //    //Console.WriteLine();
+        //}
+        internal void ReadOptionInput()
         {
             while (true)
             {
@@ -155,7 +155,7 @@ namespace GhibliFlix
         }
         internal static void ClearLog()
         {
-            File.WriteAllText("chatlog.txt", String.Empty);
+            File.WriteAllText("json_files/chatlog.txt", String.Empty);
             Menu.Log("Log Cleared, Started new Session");
         }
     }

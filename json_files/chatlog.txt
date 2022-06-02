@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GhibliFlix.menus
+namespace GhibliFlix.json_files
 {
-    internal class CreateReservationMenu
+    class chatlog
     {
     }
 }
