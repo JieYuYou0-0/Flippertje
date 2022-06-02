@@ -11,7 +11,7 @@ namespace GhibliFlix
     {
         private readonly Screen next;
 
-        public WelcomeScreen_1()
+        public WelcomeScreen()
         {
             next = new Menu_2();
             next.SetPrevious(this);
@@ -26,7 +26,7 @@ namespace GhibliFlix
             {
                 Console.Clear();
 
-                Display("Welcome, dear guest.");
+                Display("Welcome, dear guest! (o^▽^o)");
                 Display("Please press [ENTER] to continue...");
 
                 input = Console.ReadKey();
@@ -37,3 +37,4 @@ namespace GhibliFlix
         }
     }
 }
+
