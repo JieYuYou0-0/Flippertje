@@ -30,7 +30,7 @@ namespace GhibliFlix
 
         internal static List<Reservation> FetchAll(DateTime date)
         {
-            return FetchAll().reservations.Where(r => r.ReservationDate == date.ToShortDateString()).ToList());
+            return FetchAll().reservations.Where(r => r.ReservationDate == date.ToShortDateString()).ToList();
         }
         public static void Save(Reservation reservation)
         {

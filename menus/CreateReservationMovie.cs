@@ -17,7 +17,14 @@ namespace GhibliFlix
         {
 
         }
-        internal override void InIt()
+        internal override void Init()
+        {
+            Log("");
+            Console.Clear();
+
+        }
+
+        internal void CreateReservation()
         {
 
         }

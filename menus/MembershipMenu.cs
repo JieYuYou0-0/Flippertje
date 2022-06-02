@@ -13,8 +13,8 @@ namespace GhibliFlix
     {
         internal MembershipMenu()
         {
-            CreateReservationMenu createReservationMenu = new CreateReservationMenu();
-            createReservationMenu
+            CreateReservationMovie createReservationMenu = new CreateReservationMovie();
+            createReservationMenu.PreviousMenu = Init;
             AddMenuOption(MembershipOverview, ConsoleKey.D1);
             AddMenuOption(createReservationMenu.Init, ConsoleKey.D2);
             AddMenuOption(CancelReservation, ConsoleKey.D3);
@@ -24,7 +24,10 @@ namespace GhibliFlix
         {
             Console.Clear();
             Menu.Log("Ponyo opens Membership Menu");
+            /* na membership menu krijg je overzicht movies --> movie branch
 
+            PreviousMenu = ;
+            */
         }
         internal void MembershipOverview()
         {
