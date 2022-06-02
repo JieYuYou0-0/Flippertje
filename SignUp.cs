@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.Text.Json;
 using GhibliFlix.json_class;
-using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace GhibliFlix
 {
-    public class SignUp
+    internal class SignUp
     {
         static SignUp reg = new SignUp();
 
-        public static void SignUpUser(Members.CustomerDetails data)
+        internal static void SignUpUser(Members.CustomerDetails data)
         {
             //Read existing JSON data
             var jsonData = File.ReadAllText(@"json_files\members.json");
@@ -37,7 +35,7 @@ namespace GhibliFlix
             File.WriteAllText(@"json_files\members.json", jsonData);
         }
 
-        public static bool VerifyUser(string passwordCheck)
+        internal static bool VerifyUser(string passwordCheck)
         {
             Console.WriteLine("Type STOP to cancel verifying your account");
             string input = Console.ReadLine();
@@ -57,7 +55,7 @@ namespace GhibliFlix
             return true;
         }
         //Checking credit card number
-        public static bool IsDigitsOnly(string str)
+        internal static bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
             {

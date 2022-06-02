@@ -10,12 +10,10 @@ namespace GhibliFlix.json_class
     {
         internal class CustomerDetails
         {
-            public string name { get; set; }
-            public string email { get; set; }
-            public string password { get; set; }
-            public string phonenumber { get; set; }
-            public string address { get; set; }
-            public string creditnumber { get; set; }
+            internal string Name { get; set; }
+            internal string Mail { get; set; }
+            internal string Password { get; set; }
+            internal string Creditnumber { get; set; }
 
         }
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using GhibliFlix.json_class;
-using Newtonsoft.Json;
 
 namespace GhibliFlix
 {
@@ -21,12 +20,12 @@ namespace GhibliFlix
          */
 
         // Methods
-        public static bool CustomerLogin(string loginCheck) // deze methode (functie) moet bij signIn branch
+        internal static bool CustomerLogin(string loginCheck) // deze methode (functie) moet bij signIn branch
         {
             List<Members.CustomerDetails> members = LoadAllMembers();
             for (int i = 0; i < members.Count; i++)
             {
-                if (members[i].password == loginCheck)
+                if (members[i].Password == loginCheck)
                 {
                     return true;
                 }
@@ -35,19 +34,19 @@ namespace GhibliFlix
             return false;
         }
 
-        public static List<Members.CustomerDetails> LoadAllMembers()
+        internal static List<Members.CustomerDetails> LoadAllMembers()
         {
             string readText = File.ReadAllText(@"json_files\members.json");
-            var members = JsonConvert.DeserializeObject<List<Members.CustomerDetails>>(readText) ?? new List<Members.CustomerDetails>();
+            var members = JsonSerializer.Deserialize<List<Members.CustomerDetails>>(readText) ?? new List<Members.CustomerDetails>();
             return members;
         }
 
-        public static Members.CustomerDetails LoadMember(string code)
+        internal static Members.CustomerDetails LoadMember(string code)
         {
             List<Members.CustomerDetails> members = LoadAllMembers();
             for (int i = 0; i < members.Count; i++)
             {
-                if (members[i].password == code)
+                if (members[i].Password == code)
                 {
                     return members[i];
                 }
