@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using GhibliFlix.jsonClasses;
 
 namespace GhibliFlix
 {
@@ -12,9 +11,21 @@ namespace GhibliFlix
     {
         internal List<Reservation> reservations { get; set; }
 
-        internal static Reservations FetchAll()
+        internal class Reservation
         {
 
+            internal string ReservationId { get; set; }
+            internal bool Cancelled { get; set; }
+            internal string DateOfCreation { get; set; }
+            internal string ReservationDate { get; set; }
+            //internal double TotcalCost { get; set; } ?
+        }
+
+
+        internal static Reservations FetchAll()
+        {
+            string json = File.ReadAllText("json_files/reservations.json");
+            return JsonSerializer.Deserialize<Reservations>(json);
         }
 
         internal static List<Reservation> FetchAll(DateTime date)

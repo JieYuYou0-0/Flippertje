@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GhibliFlix.jsonClasses
+namespace GhibliFlix
 {
     internal class Members
     {
