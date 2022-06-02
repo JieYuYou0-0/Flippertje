@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class SeatGrid
+    internal class SeatGrid : Menu
     {
 
     }
