@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public class Menu
+    internal static class Session
     {
+        internal static Member
     }
 }

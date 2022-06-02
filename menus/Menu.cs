@@ -10,16 +10,11 @@ namespace GhibliFlix
 {
     public abstract class Menu
     {
-        #region Properties
-
         public Action PreviousStep { get; set; }
         public Action PreviousMenu { get; set; }
 
         private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
 
-        #endregion Properties
-
-        #region Menu
 
         public virtual void Init()
         {
@@ -63,9 +58,6 @@ namespace GhibliFlix
                 }
             }
         }
-        #endregion Menu
-
-        #region Escape Command
 
         private void ExecuteEscCommand()
         {
@@ -90,9 +82,6 @@ namespace GhibliFlix
             }
             return false;
         }
-        #endregion Escape Command
-
-        #region Read
         internal ConsoleKeyInfo ReadKey()
         {
             ConsoleKeyInfo input = Console.ReadKey(true);
@@ -151,7 +140,6 @@ namespace GhibliFlix
             Console.ReadKey();
             PreviousMenu();
         }
-
         internal void ClearCurrentLine()
         {
             var currentLine = Console.CursorTop;
@@ -159,15 +147,12 @@ namespace GhibliFlix
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, currentLine);
         }
-        #endregion Read
-
         internal static void Log(string message)
         {
             DateTime now = DateTime.Now;
             string result = $"[{now.ToString("yyyy/MM/dd hh:mm:ss")}]\t[{message}]\n";
             File.AppendAllText("json_files/chatlog.txt", result);
         }
-
         internal static void ClearLog()
         {
             File.WriteAllText("chatlog.txt", String.Empty);
