@@ -11,7 +11,7 @@ namespace GhibliFlix
     {
         internal static void SendConfirmationMail(string htmlBody, List<string> emails, string title)
         {
-            Menu.Log("Totoro sends confirmation email");
+            Menu.Log("Totoro sends confirmation email (≧◡≦)");
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
