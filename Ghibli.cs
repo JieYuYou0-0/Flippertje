@@ -11,8 +11,7 @@ namespace GhibliFlix
         internal void Run()
         {
             Menu.ClearLog();
-            //LanguageMenu languageMenu = new LanguageMenu();
-            //languageMenu.Init();
+            
         }
 
     }

@@ -9,12 +9,12 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace GhibliFlix
 {
-    internal class MovieOverview
+    internal class MovieOverview 
     {
         private string title;
         private double price;
 
-        internal Movies()
+        internal MovieOverview()
         {
 
         }
