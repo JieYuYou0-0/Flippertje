@@ -12,7 +12,7 @@ namespace GhibliFlix
         internal static Member User { get; set; }
 
         internal static void UpdateUserInJson()
-        {
+        { 
             string json = File.ReadAllText("json_files/members.json");
             Members members = JsonSerializer.Deserialize<Members>(json);
 
