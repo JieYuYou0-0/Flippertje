@@ -10,12 +10,12 @@ namespace GhibliFlix
 {
     internal class SettingDate
     {
-        public ExploreMovies_4()
+        internal ExploreMovies_4()
         {
 
         }
 
-        public DateTime GetDateInput()
+        internal DateTime GetDateInput()
         {
             var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy" };
             while (true)
@@ -60,7 +60,7 @@ namespace GhibliFlix
             }
         }
 
-        public override void Show()
+        internal override void Show()
         {
             Log("[Step 4]");
 

@@ -11,12 +11,12 @@ namespace GhibliFlix
     {
         private readonly Screen next;
 
-        public WelcomeScreen()
+        internal WelcomeScreen()
         {
             next = new Menu_2();
             next.SetPrevious(this);
         }
-        public override void Show()
+        internal override void Show()
         {
             Log("[Step 1]");
 

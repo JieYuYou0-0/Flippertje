@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public abstract class Menu
+    internal abstract class Menu
     {
         #region Properties
 
-        public Action PreviousStep { get; set; }
-        public Action PreviousMenu { get; set; }
+        internal Action PreviousStep { get; set; }
+        internal Action PreviousMenu { get; set; }
 
         private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
 
@@ -21,17 +21,17 @@ namespace GhibliFlix
 
         #region Menu
 
-        public virtual void Init()
+        internal virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
         }
 
-        public void AddMenuOption(Action function, ConsoleKey keyPress, string display)
+        internal void AddMenuOption(Action function, ConsoleKey keyPress, string display)
         {
             commands.Add(Tuple.Create(function, keyPress, display));
         }
 
-        public void ShowMenu()
+        internal void ShowMenu()
         {
             WriteMenu();
             ReadOptionInput();
@@ -49,7 +49,7 @@ namespace GhibliFlix
             }
             //Console.WriteLine();
         }
-        public void ReadOptionInput()
+        internal void ReadOptionInput()
         {
             while (true)
             {
