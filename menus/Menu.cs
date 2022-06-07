@@ -152,7 +152,7 @@ namespace GhibliFlix
         {
             DateTime now = DateTime.Now;
             string result = $"[{now.ToString("yyyy/MM/dd hh:mm:ss")}]\t[{message}]\n";
-            File.AppendAllText("json_files/chatlog.txt", result);
+            File.AppendAllText("chatlog.txt", result);
         }
 
         internal static void ClearLog()
