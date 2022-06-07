@@ -10,13 +10,13 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace GhibliFlix 
 {
-    internal class MovieOverviewMenu 
+    internal class MovieOverview
     {
-        //private string title;
-        //private double price;
+        private string title;
+        private double price;
 
 
-        internal MovieOverviewMenu()
+        internal MovieOverview()
         {
 
         }
@@ -54,15 +54,15 @@ namespace GhibliFlix
 
             return prices;
         }
-        //internal Tuple<string, double>[] GetMovieCollection()
-        //{
-        //    Tuple<string, double>[] movieCollection = new Tuple<string, double>[8];
-        //    for (int i = 0; i < movieCollection.Length; i++)
-        //    {
-        //        Tuple.Create(title, price);
-        //    }
-        //    return movieCollection;
-        //}
+        internal Tuple<string, double>[] GetMovieCollection()
+        {
+            Tuple<string, double>[] movieCollection = new Tuple<string, double>[8];
+            for (int i = 0; i < movieCollection.Length; i++)
+            {
+                Tuple.Create(title, price);
+            }
+            return movieCollection;
+        }
     }
 }
 
