@@ -11,7 +11,6 @@ namespace GhibliFlix
     {
         internal WelcomeScreen()
         {
-            AddMenuOption(MovieOverview, ConsoleKey.D1);
         }
         internal override void Init()
         {
@@ -30,7 +29,7 @@ namespace GhibliFlix
             }
             while (input.Key != ConsoleKey.Enter);
 
-            next.Show();
+            
         }
     }
 }

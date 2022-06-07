@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -8,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class SettingDate
+    internal class SettingDate : Menu
     {
-        internal ExploreMovies_4()
+        internal SettingDate()
         {
 
         }
@@ -20,21 +19,21 @@ namespace GhibliFlix
             var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy" };
             while (true)
             {
-                Display("Set your date: ");
+                Console.WriteLine("Set your date: ");
                 string readFromUser = Console.ReadLine();
                 DateTime scheduleDate;
                 if (DateTime.TryParseExact(readFromUser, dateFormats, DateTimeFormatInfo.InvariantInfo,
                         DateTimeStyles.None, out scheduleDate) && scheduleDate > DateTime.Now &&
                     scheduleDate.Date != DateTime.Now.Date)
                 {
-                    Display("At what time are you planning to visit us?");
+                    Console.WriteLine("At what time are you planning to visit us?");
                     ConsoleKeyInfo input;
                     do
                     {
-                        Display("You can choose: \n" +
-                                "[1] 12:00\n" +
-                                "[2] 15:00\n" +
-                                "[3] 20:00");
+                        Console.WriteLine("You can choose: \n" +
+                                          "[1] 12:00\n" +
+                                          "[2] 15:00\n" +
+                                          "[3] 20:00");
 
                         input = Console.ReadKey();
 
@@ -55,14 +54,14 @@ namespace GhibliFlix
                 }
                 else
                 {
-                    Display($"{readFromUser} is not a valid date...\nPlease try again (⇀‸↼‶)");
+                    Console.WriteLine($"{readFromUser} is not a valid date...\nPlease try again (⇀‸↼‶)");
                 }
             }
         }
 
-        internal override void Show()
+        internal override void Init()
         {
-            Log("[Step 4]");
+            Log("[Kiki sets date]");
 
             ConsoleKeyInfo input;
 
