@@ -8,11 +8,10 @@ namespace GhibliFlix
 {
     internal class Ghibli
     {
-        public void Run()
+        internal void Run()
         {
             Menu.ClearLog();
-            //LanguageMenu languageMenu = new LanguageMenu();
-            //languageMenu.Init();
+            
         }
 
     }

@@ -8,23 +8,19 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic.CompilerServices;
 
 
-namespace GhibliFlix
+namespace GhibliFlix 
 {
     internal class MovieOverviewMenu : Menu
     {
+        //private string title;
+        //private double price;
+
+
         internal MovieOverviewMenu()
         {
 
         }
 
-        internal void GetMovieOverview()
-        {
-            Menu.Log("Kiki opens MovieOverview");
-            Menu menu = new Menu();
-            PreviousStep = menu.Init;
-            string settingsJson = File.ReadAllText("json_files/movies.json");
-
-        }
         internal string[] GetTitles()
         {
             string[] titles = new string[]
