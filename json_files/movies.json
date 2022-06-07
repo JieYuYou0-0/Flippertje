@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GhibliFlix.json_files
-{
-    class movies
-    {
-    }
+﻿{
+  "My Neighbor Totoro": {
+    "Price": 16 
+  },
+  "Howl's Moving Castle": {
+    "Price": 15 
+  },
+  "Princess Monoke": {
+    "Price": 13 
+  },
+  "Kiki's Delivery Service": {
+    "Price": 12 
+  },
+  "Ponyo": {
+    "Price": 14 
+  },
+  "Spririted Away": {
+    "Price": 11 
+  },
+  "The Cat Returns": {
+    "Price":  16 
+  },
+  "The Wind Rises": {
+    "Price":  15
+  } 
 }
