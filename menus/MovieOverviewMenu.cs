@@ -9,17 +9,17 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace GhibliFlix
 {
-    internal class MovieOverview
+    internal class MovieOverviewMenu : Menu
     {
         private string title;
         private double price;
 
-        public Movies()
+        internal MovieOverviewMenu()
         {
 
         }
 
-        public string[] GetTitles()
+        internal string[] GetTitles()
         {
             string[] titles = new string[]
             {
@@ -41,7 +41,7 @@ namespace GhibliFlix
             return titles;
         }
 
-        public double[] GetPrices()
+        internal double[] GetPrices()
         {
             double[] prices = new double[8];
             for (double i = 0.00; i < prices.Length; i++)
@@ -52,7 +52,7 @@ namespace GhibliFlix
 
             return prices;
         }
-        public Tuple<string, double>[] GetMovieCollection()
+        internal Tuple<string, double>[] GetMovieCollection()
         {
             Tuple<string, double>[] movieCollection = new Tuple<string, double>[8];
             for (int i = 0; i < movieCollection.Length; i++)

@@ -7,16 +7,13 @@ using GhibliFlix;
 
 namespace GhibliFlix
 {
-    internal class WelcomeScreen
+    internal class WelcomeScreen : Menu
     {
-        private readonly Screen next;
 
-        public WelcomeScreen()
+        internal WelcomeScreen()
         {
-            next = new Menu_2();
-            next.SetPrevious(this);
         }
-        public override void Show()
+        internal override void Init()
         {
             Log("[Step 1]");
 
@@ -26,14 +23,13 @@ namespace GhibliFlix
             {
                 Console.Clear();
 
-                Display("Welcome, dear guest! (o^▽^o)");
-                Display("Please press [ENTER] to continue...");
+                Console.WriteLine("Welcome, dear guest! (o^▽^o)");
+                Console.WriteLine("Please press [ENTER] to continue...");
 
                 input = Console.ReadKey();
             }
             while (input.Key != ConsoleKey.Enter);
 
-            next.Show();
         }
     }
 }

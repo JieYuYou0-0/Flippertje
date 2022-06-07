@@ -8,48 +8,25 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public abstract class Menu
+    internal abstract class Menu
     {
-        #region Properties
+        internal Action PreviousStep { get; set; }
+        internal Action PreviousMenu { get; set; }
 
-        public Action PreviousStep { get; set; }
-        public Action PreviousMenu { get; set; }
-
-        private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
-
-        #endregion Properties
-
-        #region Menu
-
-        public virtual void Init()
+        private readonly List<Tuple<Action, ConsoleKey>> commands = new List<Tuple<Action, ConsoleKey>>();
+        internal virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
         }
-
-        public void AddMenuOption(Action function, ConsoleKey keyPress, string display)
+        internal void AddMenuOption(Action function, ConsoleKey keyPress)
         {
-            commands.Add(Tuple.Create(function, keyPress, display));
+            commands.Add(Tuple.Create(function, keyPress));
         }
-
-        public void ShowMenu()
+        internal void ShowMenu()
         {
-            WriteMenu();
             ReadOptionInput();
         }
-
-        private void WriteMenu()
-        {
-            //Console.WriteLine();
-            foreach (var command in commands)
-            {
-                if (command.Item3 != "")
-                {
-                    Console.WriteLine(command.Item3);
-                }
-            }
-            //Console.WriteLine();
-        }
-        public void ReadOptionInput()
+        internal void ReadOptionInput()
         {
             while (true)
             {
@@ -63,10 +40,6 @@ namespace GhibliFlix
                 }
             }
         }
-        #endregion Menu
-
-        #region Escape Command
-
         private void ExecuteEscCommand()
         {
             if (PreviousStep != null)
@@ -90,9 +63,6 @@ namespace GhibliFlix
             }
             return false;
         }
-        #endregion Escape Command
-
-        #region Read
         internal ConsoleKeyInfo ReadKey()
         {
             ConsoleKeyInfo input = Console.ReadKey(true);
@@ -145,13 +115,11 @@ namespace GhibliFlix
             }
             return builder.ToString();
         }
-
         internal void GotoPreviousMenu()
         {
             Console.ReadKey();
             PreviousMenu();
         }
-
         internal void ClearCurrentLine()
         {
             var currentLine = Console.CursorTop;
@@ -159,7 +127,6 @@ namespace GhibliFlix
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, currentLine);
         }
-        #endregion Read
 
         internal static void Log(string message)
         {
@@ -167,7 +134,6 @@ namespace GhibliFlix
             string result = $"[{now.ToString("yyyy/MM/dd hh:mm:ss")}]\t[{message}]\n";
             File.AppendAllText("json_files/chatlog.txt", result);
         }
-
         internal static void ClearLog()
         {
             File.WriteAllText("chatlog.txt", String.Empty);
