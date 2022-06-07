@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class SettingDate : Menu
+    internal class SettingDate
     {
         internal SettingDate()
         {
