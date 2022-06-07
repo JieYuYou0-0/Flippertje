@@ -10,7 +10,7 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace GhibliFlix 
 {
-    internal class MovieOverviewMenu : Menu
+    internal class MovieOverviewMenu 
     {
         //private string title;
         //private double price;
