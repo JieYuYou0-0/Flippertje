@@ -11,8 +11,8 @@ namespace GhibliFlix
 {
     internal class MovieOverview : Menu
     {
-        private string title;
-        private double price;
+        //private string title;
+        //private double price;
 
         internal MovieOverview()
         {
