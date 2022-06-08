@@ -16,7 +16,7 @@ namespace GhibliFlix
         private readonly List<Tuple<Action, ConsoleKey>> commands = new List<Tuple<Action, ConsoleKey>>();
 
 
-        internal virtual void Init()
+        internal virtual void Init() 
         {
             throw new NotImplementedException("Not implemented");
         }
