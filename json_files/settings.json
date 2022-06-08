@@ -1,1 +1,52 @@
-﻿{ "language": "nl" }
+﻿{
+  "Continue": " .・゜゜・[ Press Any key to Continue ]・゜゜・．",
+
+  "EmailReservationConf": "GhibliFlix - Reservation confirmation",
+  "EmailAccountVer": "GhibliFlix - Account verification",
+  "EmailCancelRes": "GhibliFlix - Cancel reservation",
+
+  "Greet": "Dear guest, welcome! (o^▽^o)",
+  "GuestMenuTitle": "This is the guest menu. Please pick one of the following options (o´▽`o) :",
+  "GuestMenuLogin": "[1] Log in as an existing member",
+  "GuestMenuRegister": "[2] Become a new member",
+  "GuestMenuReview": "[3] Show movie list",
+  "PromptCreateReservation": "Do you want to create a reservation? (o˘◡˘o)",
+  "MembershipLogin": "Type in your membership code here to continue. (๑˘︶˘๑)",
+  "InvalidMembershipCode": "Invalid input. Membership code is not correct. o(>< )o",
+
+  "BecomeMember": "Do you want to become a member? (^ヮ^)",
+  "MembershipMenuGreet": "Welcome, {0}. o( ❛ᴗ❛ )o",
+  "MembershipMenuTitle": "This is the membership menu. Please pick one of the following options (⁀ᗢ⁀) :",
+  "MembershipOverview": "[1] Your membership profile",
+  "MembershipCreateReservation": "[2] Create a new reservation",
+  "MembershipCancelReservation": "[3] Cancel an existing reservation",
+  "MembershipCreated": "Thank you very much for creating a membership, {0}! Your membershipcode is as follows: {1}. Please save this somewhere. ☆ ～('▽^人)",
+  "EnterFullName": "Please enter your full name (≧◡≦) : ",
+  "EnterEmail": "Please enter your email adres (＾▽＾) :",
+  "EnterCreditcard": "Please enter your creditcard number (✧ω✧) :",
+  "VerificationCodeSend": "A verification code was send to your email. Please fill in the code to finish making your membership account („• ᴗ •„)",
+  "EnteredWrongCode": "This code is invalid. Please try again. (ಠ_ಠ)",
+
+  "ReservationMenuGreet": "Dear {0}, this is the menu for booking a movie. I will be asking you for a couple of details. (･ω<)☆",
+  "GuestAdded": "{0} has been added. (＾▽＾)\n",
+  "EnterDate": "Please enter your desired date, for example `30-06-2001` ┐(￣∀￣)┌",
+  "SelectMenu": "Select a menu with your Left and Right Arrowkeys.\nPress Enter when you've settled upon your choice ┐(￣ヮ￣)┌ \n",
+  "InvalidDate": "Please enter a valid date, for example `30-06-2001` (ಥ﹏ಥ)",
+  "DateAtCapacity": "Unfortunately, we are booked to capacity at this date.\n\t Enter '1' if you want me to find the next available day for you,\n\tYou can also enter another date. (>_<)",
+  "DateIsUnavailable": "Unfortunately this date is not available.\n\t Enter '1' if you want me to find the next available day for you\n\t You can also enter another date. (>_<)",
+  "ConfirmSuggestedDate": "We have found an available timeslot for you on {0}.\n\t [Accept] Press Enter\n\t [Suggest Another] Enter '1'\n\t You can also enter another date. (´｡• ᵕ •｡`)",
+  "NotifySeatNumber": "Your seat number is: {0}. It has been highlighted on the map. (*・ω・)ﾉ",
+  "SeatNumber": "Seat Number:",
+  "DateOfCreation": "Date of Creation:",
+  "Name": "Name:",
+
+  "AskVerificationCode": "Enter your reservation ID (ᵔ◡ᵔ) : ",
+  "VerificationCodeWrong": "Your verificationcode is wrong, try again (」＞＜)」",
+
+  "CancelReservation": "Cancel a reservation\n",
+  "ReservationCancelOptions": "\n[1] - Cancel reservation fully.\n[2] - Cancel reservation partly.\n",
+  "InvalidInput": "Your input is invalid. ｡･ﾟ(ﾟ><ﾟ)ﾟ･｡",
+  "CancelToLate": "You can’t cancel it anymore, you are too late. ｡ﾟ･ (>_<) ･ﾟ｡",
+  "ReservationCanceled": "Your reservation is canceled, we hope to see you another time. (*^.^*)",
+  "ReservationChanged": "Your reservation is changed. Thanks for notifying us. ( ◡‿◡ *)"
+}

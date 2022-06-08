@@ -13,36 +13,36 @@ namespace GhibliFlix
         internal Action PreviousStep { get; set; }
         internal Action PreviousMenu { get; set; }
 
-        private readonly List<Tuple<Action, ConsoleKey>> commands = new List<Tuple<Action, ConsoleKey>>();
+        private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
 
         internal virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
         }
 
-        internal void AddMenuOption(Action function, ConsoleKey keyPress)
+        internal void AddMenuOption(Action function, ConsoleKey keyPress, string display)
         {
-            commands.Add(Tuple.Create(function, keyPress));
+            commands.Add(Tuple.Create(function, keyPress, display));
         }
 
         internal void ShowMenu()
         {
-            //WriteMenu();
+            WriteMenu();
             ReadOptionInput();
         }
 
-        //private void WriteMenu()
-        //{
-        //    //Console.WriteLine();
-        //    foreach (var command in commands)
-        //    {
-        //        if (command.Item3 != "")
-        //        {
-        //            Console.WriteLine(command.Item3);
-        //        }
-        //    }
-        //    //Console.WriteLine();
-        //}
+        private void WriteMenu()
+        {
+            //Console.WriteLine();
+            foreach (var command in commands)
+            {
+                if (command.Item3 != "")
+                {
+                    Console.WriteLine(command.Item3);
+                }
+            }
+            //Console.WriteLine();
+        }
         internal void ReadOptionInput()
         {
             while (true)
@@ -138,6 +138,13 @@ namespace GhibliFlix
         {
             Console.ReadKey();
             PreviousMenu();
+        }
+        internal void WaitForInput()
+        {
+            Console.WriteLine("\n" + Session.Settings.Continue);
+            var input = ReadKey();
+
+            if (input.Key == ConsoleKey.Escape) return;
         }
 
         internal void ClearCurrentLine()

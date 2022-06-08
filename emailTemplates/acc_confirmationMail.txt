@@ -1,0 +1,54 @@
+﻿<center>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td><img src="https://i0.wp.com/www.deprotagonisten.nl/wp-content/uploads/2018/06/Studio-Ghibli-films.jpg" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<table border="0" width="100%" cellspacing="0" cellpadding="20">
+<tbody>
+<tr>
+<td>
+<div>
+<h1>Account Confirmation</h1>
+</div>
+<div>Thank you for making an account at GhibliFlix ~^^~ .</div>
+<div>&nbsp;</div>
+Your account has been made and is ready to use. Down below you can find your personal information and your membership code that you'll need to login on the program.<br />
+<div>&nbsp;</div>
+<div>Full name: **name**</div>
+<div>Code: **code**</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
