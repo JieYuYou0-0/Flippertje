@@ -34,11 +34,11 @@ namespace GhibliFlix
                 "The Cat Returns",
                 "The Wind Rises"
             };
-            foreach (string title in titles)
-            {
-                Random rnd = new Random();
-                rnd.Next(titles.Length);
-            }
+            //foreach (string title in titles)
+            //{
+            //    Random rnd = new Random();
+            //    rnd.Next(titles.Length);
+            //}
 
             return titles;
         }

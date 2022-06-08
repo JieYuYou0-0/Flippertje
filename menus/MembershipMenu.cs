@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using GhibliFlix.jsonClasses;
+using GhibliFlix.menus;
 
-namespace GhibliFlix.menus
+namespace GhibliFlix
 {
     internal class MembershipMenu : Menu
     {
@@ -19,6 +21,7 @@ namespace GhibliFlix.menus
             AddMenuOption(CancelReservation, ConsoleKey.D3, Session.Settings.MembershipCancelReservation);
 
         }
+
         internal override void Init()
         {
             Console.Clear();
@@ -63,6 +66,7 @@ namespace GhibliFlix.menus
                     bcontinue = true;
                 }
             }
+
             if (bcontinue == false)
             {
                 Menu.Log("Input invalid for cancel reservation");
@@ -84,6 +88,7 @@ namespace GhibliFlix.menus
                 ReadBackInput();
 
             }
+
             if (bcontinue == true)
             {
                 Console.WriteLine(Session.Settings.ReservationCancelOptions);
@@ -143,4 +148,5 @@ namespace GhibliFlix.menus
 
             }
         }
+    }
 }

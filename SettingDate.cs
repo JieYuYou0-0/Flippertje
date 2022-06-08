@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GhibliFlix.jsonClasses;
+using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
