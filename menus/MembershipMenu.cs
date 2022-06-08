@@ -115,19 +115,7 @@ namespace GhibliFlix
                     string namesInput = Console.ReadLine();
                     char[] delimiterChars = { ' ', ',', '.' };
                     string[] words = namesInput.Split(delimiterChars);
-                    var Guests = Reservations.reservations[indexReservation].Guests;
-                    for (int i = 0; i < Guests.Count; i++)
-                    {
-                        var GuestName = Guests[i].Name;
-                        foreach (var word in words)
-                        {
-                            if (GuestName.ToLower() == word.ToLower())
-                            {
-                                Guests.RemoveAt(i);
-                            }
-                        }
-                    }
-
+                    
                     string json2 = JsonSerializer.Serialize(Reservations);
                     File.WriteAllText("json_files/reservations.json", json2);
 
