@@ -134,6 +134,12 @@ namespace GhibliFlix
             return builder.ToString();
         }
 
+        internal void ReadBackInput()
+        {
+            Console.WriteLine("\n" + Session.Settings.Continue);
+            //Console.ReadKey();
+        }
+
         internal void GotoPreviousMenu()
         {
             Console.ReadKey();

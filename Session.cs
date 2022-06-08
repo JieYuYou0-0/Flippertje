@@ -10,10 +10,10 @@ namespace GhibliFlix
 {
     internal class Session
     {
-        public static Member User { get; set; }
-        public static Settings Settings { get; set; }
+        internal static Member User { get; set; }
+        internal static Settings Settings { get; set; }
 
-        public static void UpdateUserInJson()
+        internal static void UpdateUserInJson()
         {
             string json = File.ReadAllText("json_files/members.json");
             Members members = JsonSerializer.Deserialize<Members>(json);

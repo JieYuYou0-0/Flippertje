@@ -13,10 +13,10 @@ namespace GhibliFlix.jsonClasses
 
     internal class Member
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Code { get; set; }
-        public string Creditcard { get; set; }
+        internal string Name { get; set; }
+        internal string Email { get; set; }
+        internal string Code { get; set; }
+        internal string Creditcard { get; set; }
 
     }
 }
