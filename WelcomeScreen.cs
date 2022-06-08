@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GhibliFlix;
+using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
     internal class WelcomeScreen : Menu
     {
+        internal MenuOverview menuOverview;
+        internal Settings settingsMenu;
+        private readonly Settings settingsJson;
         internal WelcomeScreen()
         {
         }
@@ -22,7 +26,7 @@ namespace GhibliFlix
             {
                 Console.Clear();
 
-                Console.WriteLine("Welcome, dear guest! (o^▽^o)");
+                Console.WriteLine("Welcome, dear guest! (o^V^o)");
                 Console.WriteLine("Please press [ENTER] to continue...");
 
                 input = Console.ReadKey();
@@ -31,6 +35,12 @@ namespace GhibliFlix
 
 
         }
+
+        private void OpenMenuOverview()
+        {
+            menuOverview = new MenuOverview();
+            menuOverview.Init();
+            // Volgende menu moet zijn menuOverview.
+        }
     }
 }
-
