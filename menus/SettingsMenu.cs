@@ -18,10 +18,6 @@ namespace GhibliFlix
         {
             string settingsJson = File.ReadAllText("json_files/settings.json");
             settings = JsonSerializer.Deserialize<Settings>(settingsJson);
-
-            AddMenuOption(() => {  MenuOverview; }, ConsoleKey.D1, "[1] English");
-            AddMenuOption(() => { MenuOverview; }, ConsoleKey.D2, "[2] Nederlands");
-
         }
     }
 }
