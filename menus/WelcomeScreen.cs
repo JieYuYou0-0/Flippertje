@@ -15,7 +15,6 @@ namespace GhibliFlix
         internal override void Init()
         {
             Log("[GhibliFlix welcomes the guest! :D]");
-
             ConsoleKeyInfo input;
 
             do
@@ -28,8 +27,7 @@ namespace GhibliFlix
                 input = Console.ReadKey();
             }
             while (input.Key != ConsoleKey.Enter);
-
-            //next.Show();
+            ShowMenu();
         }
     }
 }
