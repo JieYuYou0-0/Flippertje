@@ -59,9 +59,9 @@ namespace GhibliFlix
             }
         }
 
-        //internal override void Init()
-        //{
-        //    Log("[Kiki sets the date]");
+        internal override void Init()
+        {
+            Log("[Kiki sets date]");
 
         //    ConsoleKeyInfo input;
 

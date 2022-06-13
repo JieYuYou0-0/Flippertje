@@ -8,24 +8,41 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal abstract class Menu
+    internal class Menu
     {
         internal Action PreviousStep { get; set; }
         internal Action PreviousMenu { get; set; }
 
         private readonly List<Tuple<Action, ConsoleKey>> commands = new List<Tuple<Action, ConsoleKey>>();
+
         internal virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
         }
+
         internal void AddMenuOption(Action function, ConsoleKey keyPress)
         {
             commands.Add(Tuple.Create(function, keyPress));
         }
+
         internal void ShowMenu()
         {
+            //WriteMenu();
             ReadOptionInput();
         }
+
+        //private void WriteMenu()
+        //{
+        //    //Console.WriteLine();
+        //    foreach (var command in commands)
+        //    {
+        //        if (command.Item3 != "")
+        //        {
+        //            Console.WriteLine(command.Item3);
+        //        }
+        //    }
+        //    //Console.WriteLine();
+        //}
         internal void ReadOptionInput()
         {
             while (true)
@@ -40,6 +57,7 @@ namespace GhibliFlix
                 }
             }
         }
+
         private void ExecuteEscCommand()
         {
             if (PreviousStep != null)
@@ -104,7 +122,7 @@ namespace GhibliFlix
                 }
             }
 
-            // Dont clear line when show is set to true
+            // Dont clear line when show is true
             if (show == true)
             {
                 Console.WriteLine();
@@ -139,6 +157,5 @@ namespace GhibliFlix
             File.WriteAllText("chatlog.txt", String.Empty);
             Menu.Log("Log Cleared, Started new Session");
         }
-
     }
 }

@@ -9,7 +9,6 @@ namespace GhibliFlix
 {
     internal class WelcomeScreen : Menu
     {
-
         internal WelcomeScreen()
         {
         }
@@ -30,6 +29,7 @@ namespace GhibliFlix
             }
             while (input.Key != ConsoleKey.Enter);
 
+            next.Show();
         }
     }
 }

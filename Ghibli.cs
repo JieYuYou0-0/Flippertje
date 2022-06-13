@@ -11,6 +11,7 @@ namespace GhibliFlix
         internal void Run()
         {
             Menu.ClearLog();
+            
         }
 
     }
