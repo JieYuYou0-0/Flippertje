@@ -45,7 +45,7 @@ namespace GhibliFlix
             }
             while (input != passwordCheck)
             {
-                Console.WriteLine("It looks like your given code is not valid. Please try again!");
+                Console.WriteLine("It looks like your given code is not valid. Please try again! ( ◡‿◡ *)");
                 input = Console.ReadLine();
                 if (input == "STOP")
                 {
