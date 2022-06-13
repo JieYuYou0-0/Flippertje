@@ -29,7 +29,7 @@ namespace GhibliFlix
             }
             while (input.Key != ConsoleKey.Enter);
 
-            next.Show();
+            //next.Show();
         }
     }
 }
