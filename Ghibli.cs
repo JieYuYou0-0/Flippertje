@@ -11,8 +11,12 @@ namespace GhibliFlix
         internal void Run()
         {
             Menu.ClearLog();
-            
+            Intro();
         }
 
+        internal void Intro()
+        {
+            WelcomeScreen newWelcomeScreen = new WelcomeScreen();
+        }
     }
 }

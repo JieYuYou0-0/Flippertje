@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GhibliFlix;
 
 namespace GhibliFlix
 {
     internal class WelcomeScreen : Menu
     {
+        
         internal WelcomeScreen()
         {
         }
         internal override void Init()
         {
-            Log("[Step 1]");
+            Log("[GhibliFlix welcomes the guest! :D]");
 
             ConsoleKeyInfo input;
 
