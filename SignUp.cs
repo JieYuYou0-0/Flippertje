@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 
+namespace GhibliFlix 
+{ 
+
             //Deserialize data and if not exist, create new list
             List<Members.CustomerDetails> jsonList;
             try
@@ -51,6 +54,7 @@ using System.Text.Json;
             }
             return true;
         }
+    }
     }
 }
 
