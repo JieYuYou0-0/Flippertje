@@ -58,28 +58,6 @@ namespace GhibliFlix
                 }
             }
         }
-
-        internal override void Init()
-        {
-            Log("[Kiki sets date]");
-
-        //    ConsoleKeyInfo input;
-
-        //    do
-        //    {
-        //        Console.Clear();
-        //        GetDateInput();
-
-        //        input = Console.ReadKey();
-
-
-        //    } while (input.Key != ConsoleKey.D1 && input.Key != ConsoleKey.D2 && input.Key != ConsoleKey.D3 && input.Key != ConsoleKey.D4 && input.Key != ConsoleKey.D5 && input.Key != ConsoleKey.D6 && input.Key != ConsoleKey.D7 && input.Key != ConsoleKey.D8 && input.Key != ConsoleKey.D9);
-
-        //    if (input.Key == ConsoleKey.D1)
-        //    {
-
-        //    }
-        //}
     }
 }
 
