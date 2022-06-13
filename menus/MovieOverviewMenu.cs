@@ -5,20 +5,6 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class MovieOverview
-    {
-    }
-}
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic.CompilerServices;
-
-
-namespace GhibliFlix
-{
     internal class MovieOverviewMenu : Menu
     {
         internal MovieOverviewMenu()
