@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
-using GhibliFlix.json_class;
+using GhibliFlix.jsonClasses;
 
 namespace GhibliFlix
 {
@@ -12,20 +12,20 @@ namespace GhibliFlix
     {
         static SignUp reg = new SignUp();
 
-        internal static void SignUpUser(Members.CustomerDetails data)
+        internal static void SignUpUser(CustomerDetails data)
         {
             //Read existing JSON data
             var jsonData = File.ReadAllText(@"json_files\members.json");
 
             //Deserialize data and if not exist, create new list
-            List<Members.CustomerDetails> jsonList;
+            List<CustomerDetails> jsonList;
             try
             {
-                jsonList = JsonSerializer.Deserialize<List<Members.CustomerDetails>>(jsonData);
+                jsonList = JsonSerializer.Deserialize<List<CustomerDetails>>(jsonData);
             }
             catch
             {
-                jsonList = new List<Members.CustomerDetails>();
+                jsonList = new List<CustomerDetails>();
             }
 
             //Add data

@@ -10,7 +10,7 @@ namespace GhibliFlix
 {
     internal static class Session
     {
-        internal static Member User { get; set; }
+        internal static CustomerDetails User { get; set; }
 
         internal static void UpdateUserInJson()
         {

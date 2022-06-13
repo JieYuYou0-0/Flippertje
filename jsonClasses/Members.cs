@@ -8,13 +8,14 @@ namespace GhibliFlix.jsonClasses
 {
     internal class Members
     {
-        internal List<Member> members { get; set; }
+        internal List<CustomerDetails> members { get; set; }
     }
 
-    internal class Member
+    internal class CustomerDetails
     {
         internal string Name { get; set; }
         internal string Email { get; set; }
+        internal string Password { get; set; }
         internal string Code { get; set; }
         internal string Creditcard { get; set; }
 
