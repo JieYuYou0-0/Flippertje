@@ -1,5 +1,14 @@
-﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GhibliFlix
+{
+    internal class MovieOverview
+    {
+    }
+}
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -69,4 +78,3 @@ namespace GhibliFlix
         //}
     }
 }
-
