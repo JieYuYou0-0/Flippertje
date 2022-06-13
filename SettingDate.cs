@@ -26,7 +26,7 @@ namespace GhibliFlix
                         DateTimeStyles.None, out scheduleDate) && scheduleDate > DateTime.Now &&
                     scheduleDate.Date != DateTime.Now.Date)
                 {
-                    Console.WriteLine("At what time are you planning to visit us?");
+                    Console.WriteLine("At what time are you planning to visit us? (o^ ^o)");
                     ConsoleKeyInfo input;
                     do
                     {
