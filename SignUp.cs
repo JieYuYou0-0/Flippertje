@@ -5,17 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 
-namespace GhibliFlix
-{
-    public class SignUp
-    {
-        static SignUp reg = new SignUp();
-
-        public static void SignUpUser(Members.CustomerDetails data)
-        {
-            //Read existing JSON data
-            var jsonData = File.ReadAllText(@"data\members.json");
-
             //Deserialize data and if not exist, create new list
             List<Members.CustomerDetails> jsonList;
             try
@@ -31,19 +20,16 @@ namespace GhibliFlix
             jsonList.Add(data);
 
             jsonData = JsonSerializer.Serialize(jsonList);
-            File.WriteAllText(@"data\members.json", jsonData);
-        }
 
-        public static bool VerifyUser(string uuid)
-        {
+        
             Console.WriteLine("Type STOP to cancel verifying your account");
             string input = Console.ReadLine();
             if (input == "STOP")
             {
                 return false;
             }
-            while (input != uuid)
-            {
+
+            
                 Console.WriteLine("It looks like your given code is not valid. Please try again!");
                 input = Console.ReadLine();
                 if (input == "STOP")
@@ -54,8 +40,8 @@ namespace GhibliFlix
             return true;
         }
         //Checking credit card number
-        public static bool IsDigitsOnly(string str)
-        {
+
+        
             foreach (char c in str)
             {
                 if (c < '0' || c > '9')
