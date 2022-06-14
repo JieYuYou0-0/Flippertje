@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class Overview : Menu
+    internal class OverviewMenu : Menu
     {
-        internal Overview()
+        internal OverviewMenu()
         {
             AddMenuOption(MovieOverview, ConsoleKey.D1,.);
         }

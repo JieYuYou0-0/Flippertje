@@ -34,7 +34,7 @@ namespace GhibliFlix
 
         private void OpenOverview()
         {
-            Overview overview = new Overview();
+            OverviewMenu overview = new OverviewMenu();
             overview.Init();
         }
     }
