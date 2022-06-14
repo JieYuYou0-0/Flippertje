@@ -1,0 +1,55 @@
+﻿<center>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td><img src="https://i0.wp.com/www.deprotagonisten.nl/wp-content/uploads/2018/06/Studio-Ghibli-films.jpg" /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<table border="0" width="100%" cellspacing="0" cellpadding="20">
+<tbody>
+<tr>
+<td>
+<div>
+<h1>Reservation Confirmation</h1>
+Thank you for making a reservation. We hope to see you soon.</div>
+<div>&nbsp;</div>
+<div>Date of reservation creation: **reservation_creation**<br />Reservation date: **reservation**</div>
+<div>Seat(s): **seats**</div>
+<div>Amount of Guests: **amount_guests**</div>
+<div>&nbsp;</div>
+<div><span style="color: #ff0000;">Important. Make sure you save this:</span></div>
+<div>Reservation id: **reservation_id**</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
