@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using GhibliFlix.jsonClasses;
-using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
     internal class SettingsMenu : Menu
     {
-        internal MenuOverview menuOverview;
+        internal OverviewMenu overviewMenu;
         readonly Settings settings;
 
         internal SettingsMenu()
