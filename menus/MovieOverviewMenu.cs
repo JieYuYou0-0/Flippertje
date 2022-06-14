@@ -7,6 +7,9 @@ namespace GhibliFlix
 {
     internal class MovieOverviewMenu : Menu
     {
+        internal string title;
+        internal double price;
+
         internal MovieOverviewMenu()
         {
 
@@ -53,14 +56,14 @@ namespace GhibliFlix
 
             return prices;
         }
-        //internal Tuple<string, double>[] GetMovieCollection()
-        //{
-        //    Tuple<string, double>[] movieCollection = new Tuple<string, double>[8];
-        //    for (int i = 0; i < movieCollection.Length; i++)
-        //    {
-        //        Tuple.Create(title, price);
-        //    }
-        //    return movieCollection;
-        //}
+        internal Tuple<string, double>[] GetMovieCollection()
+        {
+            Tuple<string, double>[] movieCollection = new Tuple<string, double>[8];
+            for (int i = 0; i < movieCollection.Length; i++)
+            {
+                Tuple.Create(this.title, this.price);
+            }
+            return movieCollection;
+        }
     }
 }

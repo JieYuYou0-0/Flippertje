@@ -28,6 +28,14 @@ namespace GhibliFlix
             }
             while (input.Key != ConsoleKey.Enter);
             ShowMenu();
+            OpenOverview();
+
+        }
+
+        private void OpenOverview()
+        {
+            Overview overview = new Overview();
+            overview.Init();
         }
     }
 }

@@ -10,6 +10,11 @@ namespace GhibliFlix
     {
         internal Overview()
         {
+            AddMenuOption(MovieOverview, ConsoleKey.D1,.);
+        }
+
+        internal void MovieOverview()
+        {
 
         }
     }
