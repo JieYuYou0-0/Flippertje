@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class MovieOverviewMenu : Menu
+    public class MovieOverviewMenu : Menu
     {
-        internal string title;
-        internal double price;
+        public string title;
+        public double price;
 
-        internal MovieOverviewMenu()
+        public MovieOverviewMenu()
         {
 
         }
 
-        internal void GetMovieOverview()
+        public void GetMovieOverview()
         {
             Menu.Log("Kiki opens MovieOverview");
             Menu menu = new Menu();
@@ -23,7 +23,7 @@ namespace GhibliFlix
             string settingsJson = File.ReadAllText("json_files/movies.json");
 
         }
-        internal string[] GetTitles()
+        public string[] GetTitles()
         {
             string[] titles = new string[]
             {
@@ -45,7 +45,7 @@ namespace GhibliFlix
             return titles;
         }
 
-        internal double[] GetPrices()
+        public double[] GetPrices()
         {
             double[] prices = new double[8];
             for (double i = 0.00; i < prices.Length; i++)
@@ -56,7 +56,7 @@ namespace GhibliFlix
 
             return prices;
         }
-        internal Tuple<string, double>[] GetMovieCollection()
+        public Tuple<string, double>[] GetMovieCollection()
         {
             Tuple<string, double>[] movieCollection = new Tuple<string, double>[8];
             for (int i = 0; i < movieCollection.Length; i++)

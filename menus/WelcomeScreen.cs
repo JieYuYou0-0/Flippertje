@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class WelcomeScreen : Menu
+    public class WelcomeScreen 
     {
         
-        internal WelcomeScreen()
+        public WelcomeScreen()
         {
         }
-        internal override void Init()
+        public override void Init()
         {
             Log("[GhibliFlix welcomes the guest! :D]");
             ConsoleKeyInfo input;
@@ -21,7 +21,7 @@ namespace GhibliFlix
             {
                 Console.Clear();
 
-                Console.WriteLine("Welcome, dear guest! (o^▽^o)");
+                Console.WriteLine("Welcome, dear guest! (o^v^o)");
                 Console.WriteLine("Please press [ENTER] to continue...");
 
                 input = Console.ReadKey();
@@ -34,8 +34,6 @@ namespace GhibliFlix
 
         private void OpenOverviewMenu()
         {
-            OverviewMenu overviewMenu = new OverviewMenu();
-            overviewMenu.Init();
         }
     }
 }

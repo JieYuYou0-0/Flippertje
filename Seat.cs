@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class Seat
+    public class Seat
     {
         private int _seatNum;
         private char[][] SeatBoard;
-        internal int AvailableSpaces;
+        public int AvailableSpaces;
 
-        internal int SeatNum
+        public int SeatNum
         {
             get // A visual representation of the state of a seat
             {
@@ -24,7 +24,7 @@ namespace GhibliFlix
             }
         }
 
-        internal Seat()
+        public Seat()
         {
             // Creation seats
             this.SeatBoard = new char[5][];
@@ -43,7 +43,7 @@ namespace GhibliFlix
             this.AvailableSpaces = 25;
         }
 
-        internal void showSeatState(char[][] seatBoard)
+        public void showSeatState(char[][] seatBoard)
         {
             string state = $"[{this.SeatBoard[0][0]}] [{this.SeatBoard[0][1]}] [{this.SeatBoard[0][2]}] [{this.SeatBoard[0][3]}] [{this.SeatBoard[0][4]}]" +
                                   $"[{this.SeatBoard[1][0]}] [{this.SeatBoard[1][1]}] [{this.SeatBoard[1][2]}] [{this.SeatBoard[1][3]}] [{this.SeatBoard[1][4]}]" +

@@ -9,9 +9,9 @@ using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
-    internal class MembershipMenu : Menu
+    public class MembershipMenu : Menu
     {
-        internal MembershipMenu()
+        public MembershipMenu()
         {
             CreateReservationMenu createReservationMenu = new CreateReservationMenu();
             createReservationMenu.PreviousMenu = Init;
@@ -22,7 +22,7 @@ namespace GhibliFlix
 
         }
 
-        internal override void Init()
+        public override void Init()
         {
             Console.Clear();
             Menu.Log("Opens Membership Menu");
@@ -35,12 +35,12 @@ namespace GhibliFlix
             ShowMenu();
         }
 
-        internal void MembershipOverview()
+        public void MembershipOverview()
         {
 
         }
 
-        internal void CancelReservation()
+        public void CancelReservation()
         {
             Log("Cancel Reservation Menu");
 

@@ -7,11 +7,11 @@ using System.Text.Json;
 
 namespace GhibliFlix
 {
-    internal class SignUp
+    public class SignUp
     {
         static SignUp reg = new SignUp();
 
-        internal static void SignUpUser(CustomerDetails data)
+        public static void SignUpUser(CustomerDetails data)
         {
             //Read existing JSON data
             var jsonData = File.ReadAllText(@"json_files\members.json");
@@ -34,7 +34,7 @@ namespace GhibliFlix
             File.WriteAllText(@"json_files\members.json", jsonData);
         }
 
-        internal static bool VerifyUser(string passwordCheck)
+        public static bool VerifyUser(string passwordCheck)
         {
             Console.WriteLine("Type STOP to cancel verifying your account");
             string input = Console.ReadLine();
@@ -54,7 +54,7 @@ namespace GhibliFlix
             return true;
         }
         //Checking credit card number
-        internal static bool IsDigitsOnly(string str)
+        public static bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
             {

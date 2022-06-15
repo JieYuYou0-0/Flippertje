@@ -6,18 +6,23 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class Members
+    public class Members
     {
-        internal List<CustomerDetails> members { get; set; }
+        public List<CustomerDetails> members { get; set; }
     }
 
-    internal class CustomerDetails
+    public class CustomerDetails
     {
-        internal string Name { get; set; }
-        internal string Email { get; set; }
-        internal string Password { get; set; }
-        internal string Code { get; set; }
-        internal string Creditcard { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Code { get; set; }
+        public string Creditcard { get; set; }
 
+    }
+
+    public class AdminDetails
+    {
+        public string Password { get; set; }
     }
 }

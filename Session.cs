@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal static class Session
+    public static class Session
     {
-        internal static CustomerDetails User { get; set; }
+        public static CustomerDetails User { get; set; }
+        public static AdminDetails Admin { get; set; }
 
-        internal static void UpdateUserInJson()
+        public static void UpdateUserInJson()
         {
             string json = File.ReadAllText("json_files/members.json");
             Members members = JsonSerializer.Deserialize<Members>(json);

@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class Menu
+    public class Menu
     {
-        internal Action PreviousStep { get; set; }
-        internal Action PreviousMenu { get; set; }
+        public Action PreviousStep { get; set; }
+        public Action PreviousMenu { get; set; }
 
         private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
 
-        internal virtual void Init()
+        public virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
         }
 
-        internal void AddMenuOption(Action function, ConsoleKey keyPress, string display)
+        public void AddMenuOption(Action function, ConsoleKey keyPress, string display)
         {
             commands.Add(Tuple.Create(function, keyPress, display));
         }
 
-        internal void ShowMenu()
+        public void ShowMenu()
         {
             WriteMenu();
             ReadOptionInput();
@@ -43,7 +43,7 @@ namespace GhibliFlix
             }
             //Console.WriteLine();
         }
-        internal void ReadOptionInput()
+        public void ReadOptionInput()
         {
             while (true)
             {
@@ -81,7 +81,7 @@ namespace GhibliFlix
             }
             return false;
         }
-        internal ConsoleKeyInfo ReadKey()
+        public ConsoleKeyInfo ReadKey()
         {
             ConsoleKeyInfo input = Console.ReadKey(true);
             if (DetectBackCommand(input))
@@ -90,7 +90,7 @@ namespace GhibliFlix
             }
             return input;
         }
-        internal string ReadLine(bool show = false)
+        public string ReadLine(bool show = false)
         {
             ConsoleKeyInfo input;
 
@@ -133,12 +133,12 @@ namespace GhibliFlix
             }
             return builder.ToString();
         }
-        internal void GotoPreviousMenu()
+        public void GotoPreviousMenu()
         {
             Console.ReadKey();
             PreviousMenu();
         }
-        internal void ClearCurrentLine()
+        public void ClearCurrentLine()
         {
             var currentLine = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
@@ -146,13 +146,13 @@ namespace GhibliFlix
             Console.SetCursorPosition(0, currentLine);
         }
 
-        internal static void Log(string message)
+        public static void Log(string message)
         {
             DateTime now = DateTime.Now;
             string result = $"[{now.ToString("yyyy/MM/dd hh:mm:ss")}]\t[{message}]\n";
             File.AppendAllText("json_files/chatlog.txt", result);
         }
-        internal static void ClearLog()
+        public static void ClearLog()
         {
             File.WriteAllText("chatlog.txt", String.Empty);
             Menu.Log("Log Cleared, Started new Session");

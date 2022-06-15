@@ -3,19 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
-    internal class OverviewMenu : Menu
+    public class OverviewMenu : Menu // Overzichtsmenu voor het inloggen
     {
-        internal OverviewMenu()
+        private readonly MovieOverviewMenu movieOverviewMenu;
+        private readonly MembershipMenu membershipMenu;
+        private readonly AdminMenu adminMenu;
+        private const string adminCode = "admin";
+
+        public OverviewMenu()
         {
-            AddMenuOption(MovieOverview, ConsoleKey.D1,.);
+            //AddMenuOption(MembershipLogin, ConsoleKey.D1,);
+
+
+            this.membershipMenu = new MembershipMenu();
+            this.adminMenu = new AdminMenu();
+
+            this.membershipMenu.PreviousStep = Init;
+            //this.adminMenu.Pre
         }
 
-        internal void MovieOverview()
+        public void MembershipLogin()
         {
 
         }
+       
     }
 }

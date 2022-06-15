@@ -9,7 +9,7 @@ namespace GhibliFlix
     {
         static void Main(string[] args)
         {
-            Ghibli newGhibli = new Ghibli();
+            GhibliManager newGhibli = new GhibliManager();
             newGhibli.Run();
         }
     }

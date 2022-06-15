@@ -7,11 +7,11 @@ using System.Text.Json;
 
 namespace GhibliFlix
 {
-    internal class SignIn
+    public class SignIn
     {
 
         // Methods
-        internal static bool CustomerLogin(string loginCheck)
+        public static bool CustomerLogin(string loginCheck)
         {
             List<CustomerDetails> members = LoadAllMembers();
             for (int i = 0; i < members.Count; i++)
@@ -25,14 +25,14 @@ namespace GhibliFlix
             return false;
         }
 
-        internal static List<CustomerDetails> LoadAllMembers()
+        public static List<CustomerDetails> LoadAllMembers()
         {
             string readText = File.ReadAllText(@"json_files\members.json");
             var members = JsonSerializer.Deserialize<List<CustomerDetails>>(readText) ?? new List<CustomerDetails>();
             return members;
         }
 
-        internal static CustomerDetails LoadMember(string code)
+        public static CustomerDetails LoadMember(string code)
         {
             List<CustomerDetails> members = LoadAllMembers();
             for (int i = 0; i < members.Count; i++)

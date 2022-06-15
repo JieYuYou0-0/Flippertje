@@ -5,22 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 
-internal class Reservations
+public class Reservations
 {
-    internal List<Reservation> reservations { get; set; }
+    public List<Reservation> reservations { get; set; }
 
-    internal static Reservations FetchAll()
+    public static Reservations FetchAll()
     {
         string json = File.ReadAllText("json_files/reservations.json");
         return JsonSerializer.Deserialize<Reservations>(json);
     }
 
-    internal static List<Reservation> FetchAll(DateTime date)
+    public static List<Reservation> FetchAll(DateTime date)
     {
         return FetchAll().reservations.Where(r => r.ReservationDate == date.ToShortDateString()).ToList();
     }
 
-    internal static void Save(Reservation reservation)
+    public static void Save(Reservation reservation)
     {
         Reservations reservations = FetchAll();
         reservations.reservations.Add(reservation);
@@ -30,17 +30,17 @@ internal class Reservations
     }
 }
 
-internal class Reservation
+public class Reservation
 {
-    internal string ReservationId { get; set; }
-    internal bool Cancelled { get; set; }
-    internal string DateOfCreation { get; set; }
-    internal string ReservationDate { get; set; }
-    internal int SeatNumber { get; set; }
+    public string ReservationId { get; set; }
+    public bool Cancelled { get; set; }
+    public string DateOfCreation { get; set; }
+    public string ReservationDate { get; set; }
+    public int SeatNumber { get; set; }
 }
-internal class Guest
+public class Guest
 {
-    internal string Name { get; set; }
-    internal string Email { get; set; }
-    internal string MovieChoice { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string MovieChoice { get; set; }
 }

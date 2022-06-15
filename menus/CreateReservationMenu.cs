@@ -9,17 +9,17 @@ using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
-    internal class CreateReservationMenu : Menu
+    public class CreateReservationMenu : Menu
     {
-        internal Reservation res;
-        internal DateTime reservationDate;
-        internal CreateReservationMenu()
+        public Reservation res;
+        public DateTime reservationDate;
+        public CreateReservationMenu()
         {
             string json = File.ReadAllText("json_files/movies.json");
             MovieOverview allMovies = JsonSerializer.Deserialize<MovieOverview>(json);
         }
 
-        internal override void Init()
+        public override void Init()
         {
             Log("Start Creating Reservation");
             Console.Clear();
@@ -28,7 +28,7 @@ namespace GhibliFlix
             WaitForInput();
         }
 
-        internal void CreateReservation()
+        public void CreateReservation()
         {
             Log("Create Reservation");
 
@@ -36,7 +36,7 @@ namespace GhibliFlix
         }
 
 
-        internal void SelectMovie()
+        public void SelectMovie()
         {
             Log("Selecting movies");
             Console.Clear();
@@ -68,19 +68,19 @@ namespace GhibliFlix
             }
         }
 
-        internal void AskDate()
+        public void AskDate()
         {
             SettingDate date = new SettingDate();
             date.GetDateInput();
         }
 
-        internal void ViewLayout()
+        public void ViewLayout()
         {
             Log("Show Layout");
             PreviousStep = AskDate;
 
         }
-        //internal void ViewLayout(List<int> seats)
+        //public void ViewLayout(List<int> seats)
         //{
         //    Log("Show Layout");
         //    PreviousStep = AskDate;
@@ -165,7 +165,7 @@ namespace GhibliFlix
         //    }
 
         //}
-        internal void SendConfirmationMail(Reservation reservation)
+        public void SendConfirmationMail(Reservation reservation)
         {
             string htmlBody = File.ReadAllText(@"emailTemplates/reservation_confirmationMail.txt");
 

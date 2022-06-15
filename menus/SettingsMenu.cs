@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class SettingsMenu : Menu
+    public class SettingsMenu : Menu
     {
-        internal OverviewMenu overviewMenu;
+        public OverviewMenu overviewMenu;
         readonly Settings settings;
 
-        internal SettingsMenu()
+        public SettingsMenu()
         {
             string settingsJson = File.ReadAllText("json_files/settings.json");
             settings = JsonSerializer.Deserialize<Settings>(settingsJson);

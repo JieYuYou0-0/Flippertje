@@ -8,63 +8,63 @@ using GhibliFlix.menus;
 
 namespace GhibliFlix
 {
-    internal class Settings
+    public class Settings
     {
-        internal string Continue { get; set; }
+        public string Continue { get; set; }
 
         // Mail
-        internal string EmailReservationConfirmation { get; set; }
-        internal string EmailAccVerification { get; set; }
-        internal string EmailCancelReservation { get; set; }
+        public string EmailReservationConfirmation { get; set; }
+        public string EmailAccVerification { get; set; }
+        public string EmailCancelReservation { get; set; }
 
         // MenuOverview
-        internal string Greet { get; set; }
-        internal string GuestMenuTitle { get; set; }
-        internal string GuestMenuLogin { get; set; }
-        internal string GuestMenuRegister { get; set; }
-        internal string MembershipLogin { get; set; }
-        internal string InvalidMembershipCode { get; set; }
-        internal string PromptCreateReservation { get; set; }
+        public string Greet { get; set; }
+        public string GuestMenuTitle { get; set; }
+        public string GuestMenuLogin { get; set; }
+        public string GuestMenuRegister { get; set; }
+        public string MembershipLogin { get; set; }
+        public string InvalidMembershipCode { get; set; }
+        public string PromptCreateReservation { get; set; }
 
         // MembershipMenu
-        internal string MembershipMenuGreet { get; set; }
-        internal string MembershipMenuTitle { get; set; }
-        internal string MembershipCreateReservation { get; set; }
-        internal string MembershipCancelReservation { get; set; }
-        internal string MembershipOverview { get; set; }
-        internal string MembershipCreated { get; set; }
-        internal string EnterFullName { get; set; }
-        internal string EnterEmail { get; set; }
-        internal string EnterCreditcard { get; set; }
-        internal string VerificationCodeSend { get; set; }
-        internal string EnteredWrongCode { get; set; }
-        internal string CancelReservation { get; set; }
-        internal string AskVerificationCode { get; set; }
+        public string MembershipMenuGreet { get; set; }
+        public string MembershipMenuTitle { get; set; }
+        public string MembershipCreateReservation { get; set; }
+        public string MembershipCancelReservation { get; set; }
+        public string MembershipOverview { get; set; }
+        public string MembershipCreated { get; set; }
+        public string EnterFullName { get; set; }
+        public string EnterEmail { get; set; }
+        public string EnterCreditcard { get; set; }
+        public string VerificationCodeSend { get; set; }
+        public string EnteredWrongCode { get; set; }
+        public string CancelReservation { get; set; }
+        public string AskVerificationCode { get; set; }
 
 
         // Create reservation
-        internal string ReservationMenuGreet { get; set; }
-        internal string AskForGuests { get; set; }
-        internal string GuestAdded { get; set; }
-        internal string EnterGuestMail { get; set; }
-        internal string EnterDate { get; set; }
-        internal string InvalidDate { get; set; }
-        internal string InvalidInput { get; set; }
-        internal string CancelTooLate { get; set; }
-        internal string ConfirmSuggestedDate { get; set; }
-        internal string NotifySeatNumber { get; set; }
-        internal string ReservationDate { get; set; }
-        internal string SeatNumber { get; set; }
-        internal string DateOfCreation { get; set; }
-        internal string ReservationCanceled { get; set; }
-        internal string NamesToRemove { get; set; }
-        internal string ReservationChanged { get; set; }
-        internal string EmailCancelRes { get; set; }
+        public string ReservationMenuGreet { get; set; }
+        public string AskForGuests { get; set; }
+        public string GuestAdded { get; set; }
+        public string EnterGuestMail { get; set; }
+        public string EnterDate { get; set; }
+        public string InvalidDate { get; set; }
+        public string InvalidInput { get; set; }
+        public string CancelTooLate { get; set; }
+        public string ConfirmSuggestedDate { get; set; }
+        public string NotifySeatNumber { get; set; }
+        public string ReservationDate { get; set; }
+        public string SeatNumber { get; set; }
+        public string DateOfCreation { get; set; }
+        public string ReservationCanceled { get; set; }
+        public string NamesToRemove { get; set; }
+        public string ReservationChanged { get; set; }
+        public string EmailCancelRes { get; set; }
 
-        internal string ReservationCancelOptions { get; set; }
-        internal string Price { get; set; }
-        internal string Guests { get; set; }
-        internal string Name { get; set; }
+        public string ReservationCancelOptions { get; set; }
+        public string Price { get; set; }
+        public string Guests { get; set; }
+        public string Name { get; set; }
 
     }
 }

@@ -7,9 +7,9 @@ using System.Net.Mail;
 
 namespace GhibliFlix
 {
-    internal class MailSender
+    public class MailSender
     {
-        internal static void SendConfirmationMail(string htmlBody, List<string> emails, string title)
+        public static void SendConfirmationMail(string htmlBody, List<string> emails, string title)
         {
             Menu.Log("Totoro sends a confirmation email (≧◡≦)");
             var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -32,7 +32,7 @@ namespace GhibliFlix
                 mailMessage.To.Add(x);
             }
         }
-        internal static void SendVerificationEmail(string htmlBody, string mail, string title)
+        public static void SendVerificationEmail(string htmlBody, string mail, string title)
         {
             Menu.Log("Totoro sends verification mail");
             var smtpClient = new SmtpClient("smtp.gmail.com")

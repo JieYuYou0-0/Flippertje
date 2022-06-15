@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    internal class SettingDate 
+    public class SettingDate 
     {
-        internal SettingDate()
+        public SettingDate()
         {
 
         }
 
-        internal DateTime GetDateInput()
+        public DateTime GetDateInput()
         {
             var dateFormats = new[] { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy" };
             while (true)
