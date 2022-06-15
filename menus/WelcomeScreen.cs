@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public class WelcomeScreen 
+    public class WelcomeScreen : Menu
     {
         
-        public WelcomeScreen()
+        public WelcomeScreen() 
         {
         }
         public override void Init()
@@ -34,6 +34,9 @@ namespace GhibliFlix
 
         private void OpenOverviewMenu()
         {
+            OverviewMenu overviewMenu = new OverviewMenu();
+            overviewMenu.PreviousMenu = Init;
+
         }
     }
 }

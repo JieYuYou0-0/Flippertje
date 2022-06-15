@@ -1,4 +1,13 @@
-﻿{
+﻿[
+  {
+    "Name": "My Neighbor Totoro",
+    "Description": "",
+    "Genre": ""
+  },
+  {
+
+  }
+]
   "My Neighbor Totoro": {
     "Price": 16 
   },
@@ -23,4 +32,3 @@
   "The Wind Rises": {
     "Price":  15
   } 
-}

@@ -5,19 +5,19 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public class MovieOverviewMenu : Menu
+    public class MovieMenu : Menu
     {
         public string title;
         public double price;
 
-        public MovieOverviewMenu()
+        public MovieMenu()
         {
 
         }
 
         public void GetMovieOverview()
         {
-            Menu.Log("Kiki opens MovieOverview");
+            Menu.Log("Kiki opens Movie menu");
             Menu menu = new Menu();
             PreviousStep = menu.Init;
             string settingsJson = File.ReadAllText("json_files/movies.json");

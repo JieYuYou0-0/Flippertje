@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using GhibliFlix.jsonClasses;
 using GhibliFlix.menus;
 
 namespace GhibliFlix
@@ -26,7 +25,7 @@ namespace GhibliFlix
         {
             Console.Clear();
             Menu.Log("Opens Membership Menu");
-            MenuOverview menuOverview = new MenuOverview();
+            OverviewMenu menuOverview = new OverviewMenu();
             PreviousMenu = menuOverview.Init;
 
             string greet = Session.Settings.MembershipMenuGreet;

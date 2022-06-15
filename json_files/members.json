@@ -1,5 +1,16 @@
-﻿{
-  "members": [
-
-  ]
-}
+﻿[
+  {
+    "Firstname": "Ghibli",
+    "Lastname": "Ghibli",
+    "Creditcard": "0123456789123456",
+    "Email": "ghibli",
+    "Password": "ghibli"
+  },
+  {
+    "Firstname": "Admin",
+    "Lastname": "Admin",
+    "Creditcard": "0123456789123456",
+    "Email": "admin",
+    "Password": "admin"
+  }
+]

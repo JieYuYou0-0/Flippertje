@@ -42,12 +42,26 @@ namespace GhibliFlix
 
         private void MovieOverviewMenu()
         {
-            MovieOverviewMenu movieOverview = new MovieOverviewMenu();
-            int index = movieOverview.Run();
-            switch (index)
-            {
-                
-            }
+            MovieMenu movieOverview = new MovieMenu();
+            movieOverview.Init();
+        }
+
+        private void LoginMenu()
+        {
+            LoginMenu login = new LoginMenu();
+            login.Init();
+        }
+
+        private void RegisterMenu()
+        {
+            RegisterMenu register = new RegisterMenu();
+            register.Init();
+        }
+
+        private void AdminMenu()
+        {
+            AdminMenu admin = new AdminMenu();
+            admin.Init();
         }
     }
 }
