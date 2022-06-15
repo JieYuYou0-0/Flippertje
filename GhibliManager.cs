@@ -9,8 +9,8 @@ namespace GhibliFlix
 {
     public class GhibliManager
     {
-        public int MainMenu_LastIndex = 0;
-        public void Run()
+        public int MainMenuLastIndex = 0;
+        public void Intro()
         {
            RunWelcomeScreen();
         }
@@ -19,10 +19,11 @@ namespace GhibliFlix
         {
             string welcomeMessage = $"Welcome, dear guest! (o^v^o)\n" +
                                     $"Please press [ENTER] to continue~\n";
+
             string[] overviewMenu = { "Choose Film", "Login", "Register", "Admin"};
-            WelcomeScreen welcomeScreen = new WelcomeScreen();
+            WelcomeScreen welcomeScreen = new WelcomeScreen(welcomeMessage, this.MainMenuLastIndex);
             int selectedIndex = welcomeScreen.Run();
-            this.MainMenu_LastIndex = selectedIndex;
+            this.MainMenuLastIndex = selectedIndex;
             switch (selectedIndex)
             {
                 case 0:
