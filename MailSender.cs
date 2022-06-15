@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace GhibliFlix
 {
@@ -32,7 +33,7 @@ namespace GhibliFlix
                 mailMessage.To.Add(x);
             }
         }
-        public static void SendVerificationEmail(string htmlBody, string mail, string title)
+        public static void SendReservationEmail(string htmlBody, string mail, string title)
         {
             Menu.Log("Totoro sends verification mail");
             var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -55,5 +56,10 @@ namespace GhibliFlix
             smtpClient.Send(mailMessage);
         }
 
+        public static bool IsValidEmail(string email)
+        {
+            return Regex.IsMatch(email, @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z");
+
+        }
     }
 }

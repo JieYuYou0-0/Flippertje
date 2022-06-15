@@ -102,18 +102,10 @@ namespace GhibliFlix
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-=_+`~{}[]:;'\"\\|<>,./?!@#$%^&*()"
                     .ToCharArray().ToList();
 
-            public Textbox(string placeholder, int index, int x, int y, bool space_allowed = false, bool hidden = false)
+            public Textbox(string placeholder, int index)
             {
                 Placeholder = placeholder;
-                Index = index;
-                X = x;
-                Y = y;
-                Hidden = hidden;
-
-                if (space_allowed)
-                {
-                    allowed.Add(' ');
-                }
+                this.Index = index;
             }
             public virtual void AddLetter(char character)
             {

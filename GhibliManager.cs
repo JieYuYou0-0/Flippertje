@@ -56,7 +56,7 @@ namespace GhibliFlix
         private void RegisterMenu()
         {
             RegisterMenu register = new RegisterMenu();
-            register.Init();
+            register.Run();
         }
 
         private void AdminMenu()
