@@ -1,55 +1,50 @@
 ﻿<center>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<Seat border="0" width="100%" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td>
-<table border="0" width="600" cellspacing="0" cellpadding="0">
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td>
-<table border="0" width="600" cellspacing="0" cellpadding="0">
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td><img src="https://i0.wp.com/www.deprotagonisten.nl/wp-content/uploads/2018/06/Studio-Ghibli-films.jpg" /></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1920px-Studio_Ghibli_logo.svg.png" /></td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 <tr>
 <td>
-<table border="0" width="600" cellspacing="0" cellpadding="0">
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td>
-<table border="0" width="100%" cellspacing="0" cellpadding="20">
+<Seat border="0" width="100%" cellspacing="0" cellpadding="20">
 <tbody>
 <tr>
 <td>
 <div>
-<h1>Reservation Confirmation</h1>
-Thank you for making a reservation. We hope to see you soon.</div>
+<h1>Reservation Cancelation Confirmation</h1>
+</div>
+<div>You have canceled your reservation.</div>
 <div>&nbsp;</div>
-<div>Date of reservation creation: **reservation_creation**<br />Reservation date: **reservation**</div>
-<div>Seat(s): **seats**</div>
-<div>Amount of Guests: **amount_guests**</div>
-<div>&nbsp;</div>
-<div><span style="color: #ff0000;">Important. Make sure you save this:</span></div>
-<div>Reservation id: **reservation_id**</div>
+We hope to see you again soon.</td>
+</tr>
+</tbody>
+</Seat>
 </td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 </tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+</Seat>
 </center>
