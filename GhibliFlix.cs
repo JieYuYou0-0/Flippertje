@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.Json;
 using GhibliFlix;
 
-namespace Ghiblix
+namespace GhibliFlix
 {
     public class GhibliFlix
     {

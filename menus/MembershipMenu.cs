@@ -94,7 +94,7 @@ namespace GhibliFlix
                 if (keuze == "1")
                 {
                     //Volledig verwijderen
-                    Menu.Log("Ghiblix removes whole reservation");
+                    Menu.Log("GhibliFlix removes whole reservation");
                     PreviousStep = Init;
 
                     Reservations.reservations[indexReservation].Cancelled = true;
@@ -105,7 +105,7 @@ namespace GhibliFlix
                 }
                 else if (keuze == "2")
                 {
-                    Menu.Log("Ghiblix removes guests from reservation");
+                    Menu.Log("GhibliFlix removes guests from reservation");
                     PreviousStep = Init;
 
                     //Deels verwijderen
@@ -151,7 +151,7 @@ namespace GhibliFlix
         #region Membership Overview
         public void MembershipOverview()
         {
-            Menu.Log("Ghiblix opens MembershipOverview");
+            Menu.Log("GhibliFlix opens MembershipOverview");
             PreviousStep = Init;
 
             string settingsJson = File.ReadAllText("jsonFiles/memberships.json");

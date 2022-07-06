@@ -200,7 +200,7 @@ namespace GhibliFlix
 
         public static string CreateMembershipCode()
         {
-            Log("Ghiblix creates random MembershipCode");
+            Log("GhibliFlix creates random MembershipCode");
             Random rnd = new Random();
             string str = "";
             for (int i = 0; i < 3; i++)
@@ -215,7 +215,7 @@ namespace GhibliFlix
 
         public static void SaveMembership(string name, string code, string mail, string creditcard)
         {
-            Log("Ghiblix saves membership in JSON");
+            Log("GhibliFlix saves membership in JSON");
             string membersJson = File.ReadAllText("jsonFiles/memberships.json");
             Members members = JsonSerializer.Deserialize<Members>(membersJson);
 

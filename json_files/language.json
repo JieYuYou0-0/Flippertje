@@ -4,9 +4,9 @@
     "Continue": "[ Press [Enter] to Continue ]",
     "Dear": "Dear",
 
-    "EmailReservationConfirmation": "Ghiblix - Reservation confirmation",
-    "EmailAccountVerification": "Ghiblix - Account verification",
-    "EmailCancelReservation": "Ghiblix - Cancel reservation",
+    "EmailReservationConfirmation": "GhibliFlix - Reservation confirmation",
+    "EmailAccountVerification": "GhibliFlix - Account verification",
+    "EmailCancelReservation": "GhibliFlix - Cancel reservation",
 
     "Greet": "Welcome dear customer, please press [Enter] to continue ^^.",
     "GuestMenuTitle": "Welcome to the guest menu. Please pick one of the following options: \n",
