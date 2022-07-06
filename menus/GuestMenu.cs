@@ -13,6 +13,7 @@ namespace GhibliFlix
         private readonly MembershipMenu membershipMenu;
         private readonly AdminMenu AdminMenu;
         private const string AdminMenuCode = "admin";
+        private const string TestMemberCode = "123";
 
         public GuestMenu()
         {
@@ -91,12 +92,11 @@ namespace GhibliFlix
             List<string> emails = new List<string> { userInfo["email"] };
             htmlBody = htmlBody.Replace("**name**", userInfo["name"]);
             htmlBody = htmlBody.Replace("**code**", code);
-            //htmlBody = htmlBody.Replace("**allergies**", userInfo["allergies"]);
             MailSender.SendConfirmationEmail(htmlBody, emails, "Account Confirmation");
 
             // send response
             string response = Session.Language.MembershipCreated;
-            Console.WriteLine(string.Format(response, userInfo["name"], code));
+            //Console.WriteLine(string.Format(response, userInfo["name"], code));
             WaitForInput();
 
             // open membership menu
@@ -114,8 +114,6 @@ namespace GhibliFlix
 
             Guid myuuid = Guid.NewGuid();
             string verificationCode = myuuid.ToString();
-            //string verificationCode = CreateMembershipCode();
-
             htmlBody = htmlBody.Replace("**code**", verificationCode);
 
             PreviousStep = Init;
@@ -192,7 +190,6 @@ namespace GhibliFlix
                 }
 
                 values["creditcard"] = input;
-                //Allergies();
             }
 
             return values;

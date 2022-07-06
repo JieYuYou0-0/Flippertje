@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -81,8 +82,7 @@ namespace GhibliFlix
             Console.WriteLine(Session.Language.AskForGuests);
 
             string input = ReadLine();
-            if (input == null) return;
-            else if (input == "") // empty string means user doesn't want to input any more guests
+            if (input == null)
             {
                 // The user is being added as a host
                 currentGuest = Session.User;
@@ -129,78 +129,91 @@ namespace GhibliFlix
             Console.Clear();
             PreviousStep = AskForEmail;
 
-            int choiceIndex = 0;
+            //var choiceIndex = ReadLine();
 
             while (true)
             {
-
                 ConsoleKeyInfo input = ReadKey();
-
                 if (input.Key == ConsoleKey.Escape)
                 {
                     return;
                 }
-                else if (input.Key == ConsoleKey.Enter)
+                else if(input.Key == ConsoleKey.Enter)
                 {
-                    var movieChoice = this.movieArr[choiceIndex];
-                    if (choiceIndex == 0)
+                    Console.WriteLine($"Choose between 1 and {(this.movieArr.Length - 1) + 1}:\n\n" +
+                                      $"[1] {this.movie1.Title}\n" +
+                                      $"[2] {this.movie2.Title}\n" +
+                                      $"[3] {this.movie3.Title}\n" +
+                                      $"[4] {this.movie4.Title}\n" +
+                                      $"[5] {this.movie5.Title}\n" +
+                                      $"[6] {this.movie6.Title}\n" +
+                                      $"[7] {this.movie7.Title}\n" +
+                                      $"[8] {this.movie8.Title}\n");
+
+                    var movieChoice = Convert.ToInt32(Console.ReadLine());
+
+                    if (movieChoice == 1)
                     {
                         currentGuest.movieChoice = this.movie1.Title;
-                        Console.WriteLine($"Title movie1: {currentGuest.movieChoice}");
-
-                        //res.TotalCost += this.movie1.Price;
-                        break;
-
+                        Console.WriteLine($"You chose: My Neighbor Totoro");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
-                    else if (choiceIndex == 1)
+
+                    if (movieChoice == 2)
                     {
                         currentGuest.movieChoice = this.movie2.Title;
-                        Console.WriteLine($"Title movie2: {currentGuest.movieChoice}");
-                        //res.TotalCost += this.movie2.Price;
-                        break;
-
+                        Console.WriteLine($"You chose: Howl's Moving Castle");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
-                    else if (choiceIndex == 2)
+                    if (movieChoice == 3)
                     {
                         currentGuest.movieChoice = this.movie3.Title;
-                        Console.WriteLine($"Title movie3: {currentGuest.movieChoice}");
-                        //res.TotalCost += this.movie3.Price;
-                        break;
-
+                        Console.WriteLine($"You chose: Princess Mononoke");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
-                    else if (choiceIndex == 3)
+                    if (movieChoice == 4)
                     {
-                        Console.WriteLine($"Title movie4: {currentGuest.movieChoice = this.movie4.Title}");
-                        break;
-
+                        currentGuest.movieChoice = this.movie4.Title;
+                        Console.WriteLine($"You chose: Kiki's Delivery Service");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
-                    else if (choiceIndex == 4)
+                    if (movieChoice == 5)
                     {
-                        Console.WriteLine($"{currentGuest.movieChoice = this.movie5.Title}");
-                        break;
-
+                        currentGuest.movieChoice = this.movie5.Title;
+                        Console.WriteLine($"You chose: Ponyo");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
-                    else if (choiceIndex == 5)
+                    if (movieChoice == 6)
                     {
-                        Console.WriteLine($"Title movie6: {currentGuest.movieChoice = this.movie6.Title}");
-                        break;
+                        currentGuest.movieChoice = this.movie6.Title;
+                        Console.WriteLine($"You chose: Spirited Away");
+                        Console.ReadLine();
+                        RenderMovieOptions();
 
                     }
-                    else if (choiceIndex == 6)
+                    if (movieChoice == 7)
                     {
-                        Console.WriteLine($"Title movie7: {currentGuest.movieChoice = this.movie7.Title}");
-                        break;
-
+                        currentGuest.movieChoice = this.movie7.Title;
+                        Console.WriteLine($"You chose: The Cat Returns");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
-                    else if (choiceIndex == 7)
+                    if (movieChoice == 8)
                     {
-                        Console.WriteLine($"Title movie8: {currentGuest.movieChoice = this.movie8.Title}");
-                        break;
+                        currentGuest.movieChoice = this.movie8.Title;
+                        Console.WriteLine($"You chose: The Wind Rises");
+                        Console.ReadLine();
+                        RenderMovieOptions();
                     }
 
+                    return;
                 }
             }
-
 
             void RenderMovieOptions()
             {
@@ -275,6 +288,13 @@ namespace GhibliFlix
         {
             Log("Show Layout");
             PreviousStep = AskForDate;
+            Console.WriteLine("Where would you like to sit? (for row: choose between 1 and 13, for column: choose between 1 and 7)");
+            res.Row = Console.Read();
+            Console.ReadLine();
+            Console.WriteLine("column: ");
+            res.Column = Console.Read();
+            Console.WriteLine($"Your seat is row: {res.Row}, column: {res.Column}");
+
 
             string fullRow = "############################";
             string emptyRow = "#                          #";
@@ -288,13 +308,13 @@ namespace GhibliFlix
             Console.Clear();
             Console.WriteLine(string.Format(Session.Language.NotifySeatNumber, res.SeatNumber));
             Console.WriteLine(fullRow);
-            Console.WriteLine(emptyRow);
+            //Console.WriteLine(emptyRow);
             Console.Write("#");
 
             for (int i = 0; i < seats.Count; i++)
             {
                 string Seat = CreateSeat(seats[i]);
-
+                //Console.WriteLine(Seat[i]);
                 if (rowPopulation + Seat.Length > maxRowPopulation)
                 {
                     CompleteRow(rowPopulation);
@@ -334,9 +354,26 @@ namespace GhibliFlix
 
             string CreateSeat(int guests)
             {
-                if (guests == 0 || guests == 1)
+                string empty = "  ";
+                string positionRow = "";
+                string positionColumn = "";
+                for (int i = 0; i < res.Row; i++)
                 {
-                    return "  []";
+                    positionRow += empty;
+                }
+
+                for (int i = 0; i < res.Column; i++)
+                {
+                    positionColumn += emptyRow;
+                }
+                if (guests == 1)
+                {
+                    return positionColumn + empty + "[]";
+                }
+
+                if (guests == 2)
+                {
+                    return "[][]";
                 }
                 return "  [" + string.Concat(Enumerable.Repeat(".", guests - 2)) + "]";
             }
@@ -380,9 +417,8 @@ namespace GhibliFlix
                 Console.WriteLine($"    - Email: {guest.Email}");
                 Console.WriteLine($"    - {Session.Language.MovieChoice} {guest.movieChoice}");
                 Console.WriteLine();
+                
             }
-
-            //Console.WriteLine($"{Session.Language.TotalCost} " + res.TotalCost + " Euro.");
         }
         #region Helper Functions
 

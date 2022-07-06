@@ -40,6 +40,8 @@ public class Reservation
     public int SeatNumber { get; set; }
     public List<Guest> Guests { get; set; }
     public double TotalCost { get; set; }
+    public int Row { get; set; }
+    public int Column { get; set; }
 }
 
 public class Guest
@@ -47,4 +49,5 @@ public class Guest
     public string Name { get; set; }
     public string Email { get; set; }
     public string movieChoice { get; set; }
+
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Text.Json;
 
@@ -28,9 +29,10 @@ namespace GhibliFlix
 
             Console.WriteLine(Session.Language.AdminMenuChoices);
             //Console.WriteLine("[1] View movie on date");
-            Console.WriteLine("[1] Go to change movies menu\n");
+            Console.WriteLine("[1] Go to change movies menu");
+            Console.WriteLine("[2] Go to movie Overview menu\n");
 
-            string AdminChoice = ReadLine();
+            var AdminChoice = ReadLine();
 
             //if (AdminChoice == "1")
             //{
@@ -45,6 +47,22 @@ namespace GhibliFlix
                 AdminMenu Adminmenu = new AdminMenu();
                 Adminmenu.ChangeMovies();
             }
+            else if (AdminChoice == "2")
+            {
+                // Movie overview
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.MovieOverview();
+                Console.WriteLine("Do you want to change a movie? Please choose Y or N.");
+                var answer = ReadLine();
+                if (answer == "y" || answer == "Y")
+                {
+                    adminMenu.ChangeMovies();
+                }
+                else if (answer == "n" || answer == "N")
+                {
+                    return;
+                }
+            }
             else
             {
                 Console.WriteLine(Session.Language.InvalidOption);
@@ -52,6 +70,24 @@ namespace GhibliFlix
             }
         }
 
+        private void MovieOverview()
+        {
+            Console.Clear();
+            Console.WriteLine("Movie1 " +
+                              "Title: My Neighbor Totoro\n\n" +
+                              "Description: \nWhen Satsuki and her sister Mei move with their father to a new home in the countryside, they find country life is not as simple as it seems." +
+                              "They soon discover that the house and nearby woods are full of strange and delightful creatures, including a gigantic but gentle forest spirit called Totoro, who can only be seen by children." +
+                              "Totoro and his friends introduce the girls to a series of adventures, including a ride aboard the extraordinary Cat Bus.\n\n" +
+                              "");
+            Console.WriteLine($"Movie2: Howl's Moving Castle");
+            Console.WriteLine($"Movie3: Princess Mononoke");
+            Console.WriteLine($"Movie4: Kiki's Delivery Service");
+            Console.WriteLine($"Movie5: Ponyo");
+            Console.WriteLine($"Movie6: Spirited Away");
+            Console.WriteLine($"Movie7: The Cat Returns");
+            Console.WriteLine($"Movie8: The Wind Rises");
+
+        }
         private void ChangeMovies()
         {
             Log("Admin ChangeMovies method");
@@ -70,7 +106,7 @@ namespace GhibliFlix
             Console.WriteLine("[5] Change Movie5");
             Console.WriteLine("[6] Change Movie6");
             Console.WriteLine("[7] Change Movie7");
-            Console.WriteLine("[8] Change Movie8");
+            Console.WriteLine("[8] Change Movie8\n");
 
             string AdminKeuze = ReadLine();
             PreviousMenu = ChangeMovies;
@@ -79,6 +115,7 @@ namespace GhibliFlix
             {
                 // Movie1 aanpassen
                 Log("Change Movie1 menu");
+                Console.Clear();
                 Console.WriteLine(Session.Language.ChangeMovie1);
                 Console.WriteLine("[A] Change title of Movie1");
                 Console.WriteLine("[B] Change description of Movie1");

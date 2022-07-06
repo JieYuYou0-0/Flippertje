@@ -137,7 +137,6 @@ namespace GhibliFlix
             while (true)
             {
                 input = Console.ReadKey(intercept: true);
-
                 if (input.Key == ConsoleKey.Enter)
                 {
                     break;

@@ -20,7 +20,6 @@ namespace GhibliFlix
             AddMenuOption(MembershipOverview, ConsoleKey.D1, Session.Language.MembershipOverview);
             AddMenuOption(createReservationMenu.Init, ConsoleKey.D2, Session.Language.MembershipCreateReservation);
             AddMenuOption(CancelReservation, ConsoleKey.D3, Session.Language.MembershipCancelReservation);
-
         }
 
         public override void Init()
@@ -139,7 +138,7 @@ namespace GhibliFlix
                     ReadBackInput();
                 }
 
-                string htmlBody = htmlBody = File.ReadAllText(@"emailTemplates/reservationCancelConfirmation.txt");
+                string htmlBody = File.ReadAllText(@"emailTemplates/reservationCancelConfirmation.txt");
                 List<string> email = new List<string> { Session.User.Email };
 
                 MailSender.SendConfirmationEmail(htmlBody, email, Session.Language.EmailCancelReservation);
