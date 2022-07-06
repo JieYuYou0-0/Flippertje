@@ -1,0 +1,54 @@
+﻿<center>
+<Seat border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1920px-Studio_Ghibli_logo.svg.png" /></td>
+</tr>
+</tbody>
+</Seat>
+</td>
+</tr>
+<tr>
+<td>
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<Seat border="0" width="100%" cellspacing="0" cellpadding="20">
+<tbody>
+<tr>
+<td>
+<div>
+<h1>Account Verification</h1>
+</div>
+<div>Thank you for making an account at Ghiblix.</div>
+<div>&nbsp;</div>
+<div>Just one more step and you can make use of your new membership account.</div>
+<div>Please fill in the following code in the program to officially activate your account.</div>
+<div>&nbsp;</div>
+<div>code: **code**</div>
+</td>
+</tr>
+</tbody>
+</Seat>
+</td>
+</tr>
+</tbody>
+</Seat>
+</td>
+</tr>
+</tbody>
+</Seat>
+</td>
+</tr>
+</tbody>
+</Seat>
+</center>
