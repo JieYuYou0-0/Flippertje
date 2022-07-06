@@ -20,6 +20,7 @@ namespace GhibliFlix
             AddMenuOption(MembershipOverview, ConsoleKey.D1, Session.Language.MembershipOverview);
             AddMenuOption(createReservationMenu.Init, ConsoleKey.D2, Session.Language.MembershipCreateReservation);
             AddMenuOption(CancelReservation, ConsoleKey.D3, Session.Language.MembershipCancelReservation);
+
         }
 
         public override void Init()
@@ -94,7 +95,7 @@ namespace GhibliFlix
                 if (keuze == "1")
                 {
                     //Volledig verwijderen
-                    Menu.Log("GhibliFlix removes whole reservation");
+                    Menu.Log("Ghiblix removes whole reservation");
                     PreviousStep = Init;
 
                     Reservations.reservations[indexReservation].Cancelled = true;
@@ -105,7 +106,7 @@ namespace GhibliFlix
                 }
                 else if (keuze == "2")
                 {
-                    Menu.Log("GhibliFlix removes guests from reservation");
+                    Menu.Log("Ghiblix removes guests from reservation");
                     PreviousStep = Init;
 
                     //Deels verwijderen
@@ -151,7 +152,7 @@ namespace GhibliFlix
         #region Membership Overview
         public void MembershipOverview()
         {
-            Menu.Log("GhibliFlix opens MembershipOverview");
+            Menu.Log("Ghiblix opens MembershipOverview");
             PreviousStep = Init;
 
             string settingsJson = File.ReadAllText("jsonFiles/memberships.json");
