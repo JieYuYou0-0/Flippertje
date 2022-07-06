@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GhibliFlix.MovieMenu
+namespace GhibliFlix
 {
     public class MovieCollection
     {
