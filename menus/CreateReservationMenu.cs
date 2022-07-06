@@ -288,11 +288,11 @@ namespace GhibliFlix
         {
             Log("Show Layout");
             PreviousStep = AskForDate;
-            Console.WriteLine("Where would you like to sit? (for row: choose between 1 and 13, for column: choose between 1 and 7)");
-            res.Row = Console.Read();
+            Console.WriteLine("Where would you like to sit? (for row: choose between 1 and 12)");
+            res.Row = Convert.ToInt32(Console.ReadLine());
             Console.ReadLine();
-            Console.WriteLine("column: ");
-            res.Column = Console.Read();
+            Console.WriteLine("for column: choose between 1 and 7");
+            res.Column = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"Your seat is row: {res.Row}, column: {res.Column}");
 
 
@@ -308,13 +308,13 @@ namespace GhibliFlix
             Console.Clear();
             Console.WriteLine(string.Format(Session.Language.NotifySeatNumber, res.SeatNumber));
             Console.WriteLine(fullRow);
-            //Console.WriteLine(emptyRow);
+            Console.WriteLine(emptyRow);
             Console.Write("#");
 
             for (int i = 0; i < seats.Count; i++)
             {
                 string Seat = CreateSeat(seats[i]);
-                //Console.WriteLine(Seat[i]);
+                Console.WriteLine(Seat[i]);
                 if (rowPopulation + Seat.Length > maxRowPopulation)
                 {
                     CompleteRow(rowPopulation);
@@ -354,26 +354,9 @@ namespace GhibliFlix
 
             string CreateSeat(int guests)
             {
-                string empty = "  ";
-                string positionRow = "";
-                string positionColumn = "";
-                for (int i = 0; i < res.Row; i++)
+                if (guests == 0 || guests == 1)
                 {
-                    positionRow += empty;
-                }
-
-                for (int i = 0; i < res.Column; i++)
-                {
-                    positionColumn += emptyRow;
-                }
-                if (guests == 1)
-                {
-                    return positionColumn + empty + "[]";
-                }
-
-                if (guests == 2)
-                {
-                    return "[][]";
+                    return "  []";
                 }
                 return "  [" + string.Concat(Enumerable.Repeat(".", guests - 2)) + "]";
             }
