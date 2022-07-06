@@ -31,7 +31,7 @@ namespace GhibliFlix
         static void Main(string[] args)
         {
             information = new Information();
-            GhibliManager newGhibli = new GhibliManager();
+            GhibliFlix newGhibli = new GhibliFlix();
             newGhibli.Intro();
         }
     }
