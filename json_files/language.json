@@ -1,0 +1,105 @@
+﻿{
+  "en": {
+    "LanguageSelected": "en",
+    "Continue": "[ Press [Enter] to Continue ]",
+    "Dear": "Dear",
+
+    "EmailReservationConfirmation": "Ghiblix - Reservation confirmation",
+    "EmailAccountVerification": "Ghiblix - Account verification",
+    "EmailCancelReservation": "Ghiblix - Cancel reservation",
+
+    "Greet": "Welcome dear customer, please press [Enter] to continue ^^.",
+    "GuestMenuTitle": "Welcome to the guest menu. Please pick one of the following options: \n",
+    "GuestMenuLogin": "[1] Log in as an existing member",
+    "GuestMenuRegister": "[2] Become a new member",
+    "PromptCreateReservation": "Do you want to create a reservation?",
+    "MembershipLogin": "Type in your membership code here to continue.",
+    "InvalidMembershipCode": "Invalid input. Membership code is not correct.",
+
+    "AdminMenu": "Enter a date to view a summary of the movies that have been ordered on a specific date.",
+    "AdminAnotherDate": "Enter another date or press Escape to go back:",
+
+    "BecomeMember": "Do you want to become a member?",
+    "MembershipMenuGreet": "Welcome, {0}.",
+    "MembershipMenuTitle": "This is the membership menu. Please pick one of the following options:",
+    "MembershipOverview": "[1] Your membership profile",
+    "MembershipCreateReservation": "[2] Create a new reservation",
+    "MembershipCancelReservation": "[3] Cancel an existing reservation",
+    "MembershipLookup": "[4] Search for a movie",
+    "MembershipCreated": "Thank you very much for creating a membership, {0}! Your membershipcode is as follows: {1}. Please save this somewhere.",
+    "EnterFullName": "Please enter your fullname:",
+    "EnterEmail": "Please enter your email address:",
+    "EnterCreditcard": "Please enter your creditcard number (12 digits):",
+    "VerificationCodeSend": "A verification code was send to your email. Please fill in the code down below to finish making your membership account",
+    "EnteredWrongCode": "This code is invalid. Please try again.",
+
+
+    "ReservationMenuGreet": "Dear {0}, this is the menu for booking a reservation. I will be asking you for a couple of required details.",
+    "AskForGuests": "Do you want to add another guest?\n \t[Yes] Enter the full name of the person who you want to add.\n \t[No] Leave this field empty and press Enter on your keyboard.",
+    "GuestAdded": "{0} has been added.\n",
+    "EnterGuestMail": "Please enter {0}'s e-mail:",
+    "EnterDate": "Please enter your desired date, for example `30-06-2001`:",
+    "SelectMovie": "Select a movie with your right and left Arrow keys.\nPress Enter when you've settled upon your choice:\n",
+    "InvalidDate": "Please enter a valid date, for example `30-06-2001`:",
+    "DateAtCapacity": "Unfortunately, we are booked to capacity at this date.\n\t Enter '1' if you want me to find the next available day for you,\n\tYou can also enter another date.",
+    "DateIsMonday": "Unfortunately, our restaurant is closed on mondays.\n\t Enter '1' if you want me to find the next available day for you,\n\tYou can also enter another date.",
+    "DateIsUnavailable": "Unfortunately this date is not available.\n\t Enter '1' if you want me to find the next available day for you\n\t You can also enter another date.",
+    "ConfirmSuggestedDate": "We have found an available timeslot for you on {0}.\n\t [Accept] Press Enter\n\t [Suggest Another] Enter '1'\n\t You can also enter another date.",
+    "NotifySeatNumber": "Your Seat number is: {0}. It has been highlighted on the map.",
+    "AskHotelBooking": "Do you want to book a hotel?\nThis will cost you {0} Euros.\n",
+    "NoYes": "No Yes",
+    "AskMovieChoice": "[Asking the host] What is your movie choice?",
+    "ReservationDate": "Reservation date:",
+    "SeatNumber": "Seat Number:",
+    "DateOfCreation": "Date of Creation:",
+    "Price": "Price",
+    "Guests": "Guests:",
+    "Name": "Name:",
+    "MovieChoice": "Movie Choice:",
+    "TotalCost": "Total Cost:",
+
+    "AskVerificationCode": "Enter your reservation ID: ",
+    "VerificationCodeWrong": "Your verification code is wrong, try again.",
+
+    "CancelReservation": "Cancel a reservation\n",
+    "ReservationCancelOptions": "\n[1] - Cancel reservation fully.\n[2] - Cancel reservation partly.\n",
+    "InvalidInput": "Your input is invalid.",
+    "CancelTooLate": "You cant cancel it anymore, you are too late.",
+    "ReservationCanceled": "Your reservation is canceled, we hope to see you another time.",
+    "NamesToRemove": "Enter the names that need to be removed from the reservation separated with a comma. For example: James, Alfred, etc.",
+    "ReservationChanged": "Your reservation is changed. Thanks for telling us.",
+
+    "ChangeMovieCollection": "To change a menu press: \n\n[1]- Movie1 menu \n[2]- Movie2 menu \n[3]- Movie3 menu\n[4]- Movie4 menu\n[5]- Movie5 menu\n[6]- Movie6 menu\n[7]- Movie7 menu\n[8]- Movie8 menu",
+    "ChangeMovie1": "Change Movie1 Menu\n\n",
+    "Movie1Changed": "Movie1 Menu is changed.",
+
+    "ChangeMovie2": "Change Movie2 Menu\n\n",
+    "Movie2Changed": "Movie2 Menu is changed.",
+
+    "ChangeMovie3": "Change Movie3 Menu\n\n",
+    "Movie3Changed": "Movie3 Menu is changed.",
+
+    "ChangeMovie4": "Change Movie4 Menu\n\n",
+    "Movie4Changed": "Movie4 Menu is changed.",
+
+    "ChangeMovie5": "Change Movie5 Menu\n\n",
+    "Movie5Changed": "Movie5 Menu is changed.",
+
+    "ChangeMovie6": "Change Movie6 Menu\n\n",
+    "Movie6Changed": "Movie6 Menu is changed.",
+
+    "ChangeMovie7": "Change Movie7 Menu\n\n",
+    "Movie7Changed": "Movie7 Menu is changed.",
+
+    "ChangeMovie8": "Change Movie8 Menu\n\n",
+    "Movie8Changed": "Movie8 Menu is changed.",
+
+    "ChangeTitle": "Enter the title for the movie:",
+    "ChangeDescription": "Enter the description for the movie:",
+    "ChangePrice": "Enter the price for the movie:",
+    "ChangeDuration": "Enter the duration for the movie:",
+
+    "InvalidOption": "Unknown input!",
+    "AdminMovieChoices": "Press [1] to show the ordered movies on date.\nPress [2] to change the movie collection.\n\n"
+  }
+}
