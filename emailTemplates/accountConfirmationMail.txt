@@ -1,54 +1,54 @@
 ﻿<center>
-<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<Seat border="0" width="100%" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td>
-<table border="0" width="600" cellspacing="0" cellpadding="0">
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td>
-<table border="0" width="600" cellspacing="0" cellpadding="0">
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td><img src="https://i0.wp.com/www.deprotagonisten.nl/wp-content/uploads/2018/06/Studio-Ghibli-films.jpg" /></td>
+<td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1920px-Studio_Ghibli_logo.svg.png" /></td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 <tr>
 <td>
-<table border="0" width="600" cellspacing="0" cellpadding="0">
+<Seat border="0" width="600" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td>
-<table border="0" width="100%" cellspacing="0" cellpadding="20">
+<Seat border="0" width="100%" cellspacing="0" cellpadding="20">
 <tbody>
 <tr>
 <td>
 <div>
 <h1>Account Confirmation</h1>
 </div>
-<div>Thank you for making an account at GhibliFlix ~^.^~</div>
+<div>Thank you for making an account at Ghiblix.</div>
 <div>&nbsp;</div>
-Your account has been made and is ready to use. Down below you can find your personal information and your membership code that you'll need to login on the program.<br />
+Your account has been made and is ready to use. You can find your personal information down below and your membership code that you'll need to login on the program.<br />
 <div>&nbsp;</div>
-<div>Full name: **name**</div>
+<div>Fullname: **name**</div>
 <div>Code: **code**</div>
 </td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </td>
 </tr>
 </tbody>
-</table>
+</Seat>
 </center>
