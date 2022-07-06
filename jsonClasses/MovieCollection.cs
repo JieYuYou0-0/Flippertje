@@ -114,29 +114,5 @@ namespace GhibliFlix.MovieMenu
 
         #endregion
 
-        //#region Courses
-
-        //public abstract class Course
-        //{
-        //    public string Name { get; set; }
-        //}
-
-        //public class Name : Course
-        //{
-        //}
-
-        //public class description : Course
-        //{
-        //}
-
-        //public class Price : Course
-        //{
-        //}
-
-        //public class Duration : Course
-        //{
-        //}
-
-        //#endregion
     }
 }
