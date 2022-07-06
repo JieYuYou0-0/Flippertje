@@ -8,13 +8,18 @@ using System.Threading.Tasks;
 
 namespace GhibliFlix
 {
-    public class Menu
+    public abstract class Menu
     {
-        public Action PreviousStep { get; set; }
-        public Action PreviousMenu { get; set; }
+        #region Properties
+        public Action PreviousStep { private get; set; }
+
+        public Action PreviousMenu { private get; set; }
 
         private readonly List<Tuple<Action, ConsoleKey, string>> commands = new List<Tuple<Action, ConsoleKey, string>>();
 
+        #endregion Properties
+
+        #region Menu
         public virtual void Init()
         {
             throw new NotImplementedException("Not implemented");
@@ -33,7 +38,7 @@ namespace GhibliFlix
 
         private void WriteMenu()
         {
-            //Console.WriteLine();
+            Console.WriteLine();
             foreach (var command in commands)
             {
                 if (command.Item3 != "")
@@ -41,8 +46,9 @@ namespace GhibliFlix
                     Console.WriteLine(command.Item3);
                 }
             }
-            //Console.WriteLine();
+            Console.WriteLine();
         }
+
         public void ReadOptionInput()
         {
             while (true)
@@ -56,6 +62,15 @@ namespace GhibliFlix
                     break;
                 }
             }
+        }
+        #endregion Menu
+
+        #region Escape Commands
+        private void ExecuteCtrlQCommand()
+        {
+            Menu.Log("Restart Flow");
+            Console.Clear();
+            Init();
         }
 
         private void ExecuteEscCommand()
@@ -72,34 +87,56 @@ namespace GhibliFlix
                 PreviousMenu();
             }
         }
+
+        private void ExecuteCtrlSCommand()
+        {
+            Menu.Log("Close App");
+        }
+
         private bool DetectBackCommand(ConsoleKeyInfo input)
         {
-            if (input.Key == ConsoleKey.Escape)
+            if ((input.Modifiers & ConsoleModifiers.Control) != 0)
+            {
+                if (input.Key == ConsoleKey.Q)
+                {
+                    ExecuteCtrlQCommand();
+                    return true;
+                }
+                else if (input.Key == ConsoleKey.S)
+                {
+                    ExecuteCtrlSCommand();
+                    return true;
+                }
+
+            }
+            else if (input.Key == ConsoleKey.Escape)
             {
                 ExecuteEscCommand();
                 return true;
             }
             return false;
         }
-        public ConsoleKeyInfo ReadKey()
+        #endregion Escape Commands
+
+        #region Read
+        internal ConsoleKeyInfo ReadKey()
         {
-            ConsoleKeyInfo input = Console.ReadKey(true);
+            ConsoleKeyInfo input = Console.ReadKey(intercept: true);
             if (DetectBackCommand(input))
             {
                 return new ConsoleKeyInfo((char)ConsoleKey.Escape, ConsoleKey.Escape, false, false, false);
             }
             return input;
         }
-        public string ReadLine(bool show = false)
+
+        internal string ReadLine(bool show = false)
         {
             ConsoleKeyInfo input;
-
-            // Stringbuilder class for creating a new text
             StringBuilder builder = new StringBuilder();
 
             while (true)
             {
-                input = Console.ReadKey(true);
+                input = Console.ReadKey(intercept: true);
 
                 if (input.Key == ConsoleKey.Enter)
                 {
@@ -122,7 +159,7 @@ namespace GhibliFlix
                 }
             }
 
-            // Dont clear line when show is true
+            // Dont clear line when show is set to true
             if (show == true)
             {
                 Console.WriteLine();
@@ -133,26 +170,57 @@ namespace GhibliFlix
             }
             return builder.ToString();
         }
-        public void GotoPreviousMenu()
+
+        #region WaitForInput Methods
+        internal void ReadBackInput()
         {
+            Console.WriteLine("\n" + Session.Language.Continue);
+            Console.ReadKey();
+            ExecuteCtrlQCommand();
+        }
+
+        internal void GotoPreviousMenu()
+        {
+            Console.WriteLine("\n" + Session.Language.Continue);
             Console.ReadKey();
             PreviousMenu();
         }
-        public void ClearCurrentLine()
+
+        internal void WaitForInput()
+        {
+            Console.WriteLine("\n" + Session.Language.Continue);
+            var input = ReadKey();
+
+            if (input.Key == ConsoleKey.Escape)
+            {
+                return;
+            }
+        }
+
+        internal void ClearCurrentLine()
         {
             var currentLine = Console.CursorTop;
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, currentLine);
         }
+        #endregion WaitForInput Methods
 
-        public static void Log(string message)
+        #endregion Read
+        internal static string BoolToLanguage(bool condition)
+        {
+            string[] options = Session.Language.NoYes.Split(' ');
+            return options[Convert.ToInt32(condition)];
+        }
+
+        internal static void Log(string message)
         {
             DateTime now = DateTime.Now;
-            string result = $"[{now.ToString("yyyy/MM/dd hh:mm:ss")}]\t[{message}]\n";
-            File.AppendAllText("json_files/chatlog.txt", result);
+            string sResultaat = $"[{now.ToString("yyyy/MM/dd hh:mm:ss")}]\t[{message}]\n";
+            File.AppendAllText("chatlog.txt", sResultaat);
         }
-        public static void ClearLog()
+
+        internal static void ClearLog()
         {
             File.WriteAllText("chatlog.txt", String.Empty);
             Menu.Log("Log Cleared, Started new Session");
