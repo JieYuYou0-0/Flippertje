@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
+﻿using System.Net;
 using System.Net.Mail;
-using System.Text.RegularExpressions;
 
 namespace GhibliFlix
 {
-    public class MailSender
+    class MailSender
     {
-        public static void SendConfirmationMail(string htmlBody, List<string> emails, string title)
+        public static void SendConfirmationEmail(string htmlBody, List<string> emails, string title)
         {
-            Menu.Log("Totoro sends a confirmation email (≧◡≦)");
-            var smtpClient = new SmtpClient("smtp.gmail.com")
+            Menu.Log("Ponyo sends confirmation email");
+            var smtpClient = new SmtpClient("smtp.office365.com")// switch from platform; gmail to office365 (via gmail kon niet meer ivm beveiliging voor derde partij)
             {
                 Port = 587,
-                Credentials = new NetworkCredential("ghibliflix@gmail.com", "Ghibli123"),
+                Credentials = new NetworkCredential("ghibliflix@hotmail.com", "Ghibli123"),
                 EnableSsl = true
             };
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("ghibliflix@gmail.com"),
-                Subject = title,
+                From = new MailAddress("ghibliflix@hotmail.com"),
+                Subject = "Confirmation Mail",
                 Body = htmlBody,
                 IsBodyHtml = true
             };
@@ -32,34 +27,28 @@ namespace GhibliFlix
             {
                 mailMessage.To.Add(x);
             }
+            smtpClient.Send(mailMessage);
         }
-        public static void SendReservationEmail(string htmlBody, string mail, string title)
+
+        public static void SendVerificationEmail(string htmlBody, string email, string title)
         {
-            Menu.Log("Totoro sends verification mail");
-            var smtpClient = new SmtpClient("smtp.gmail.com")
+            Menu.Log("Ponyo sends verification email");
+            var smtpClient = new SmtpClient("smtp.office365.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("ghibliflix@gmail.com", "Ghibli123"),
+                Credentials = new NetworkCredential("ghibliflix@hotmail.com", "Ghibli123"),
                 EnableSsl = true
             };
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("ghibliflix@gmail.com"),
-                Subject = title,
+                From = new MailAddress("ghibliflix@hotmail.com"),
+                Subject = "Verfication mail",
                 Body = htmlBody,
                 IsBodyHtml = true
             };
-
-            mailMessage.To.Add(mail);
-
+            mailMessage.To.Add(email);
             smtpClient.Send(mailMessage);
-        }
-
-        public static bool IsValidEmail(string email)
-        {
-            return Regex.IsMatch(email, @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*@((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))\z");
-
         }
     }
 }
