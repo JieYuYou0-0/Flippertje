@@ -11,7 +11,7 @@ public class Reservations
 
     public static Reservations FetchAll()
     {
-        string json = File.ReadAllText("json_files/reservations.json");
+        string json = File.ReadAllText("jsonFiles/reservations.json");
         return JsonSerializer.Deserialize<Reservations>(json);
     }
 
@@ -26,7 +26,7 @@ public class Reservations
         reservations.reservations.Add(reservation);
 
         string json = JsonSerializer.Serialize(reservations);
-        File.WriteAllText("json_files/reservations.json", json);
+        File.WriteAllText("jsonFiles/reservations.json", json);
     }
 }
 
@@ -34,13 +34,17 @@ public class Reservation
 {
     public string ReservationId { get; set; }
     public bool Cancelled { get; set; }
+    public string HostId { get; set; }
     public string DateOfCreation { get; set; }
     public string ReservationDate { get; set; }
     public int SeatNumber { get; set; }
+    public List<Guest> Guests { get; set; }
+    public double TotalCost { get; set; }
 }
+
 public class Guest
 {
     public string Name { get; set; }
     public string Email { get; set; }
-    public string MovieChoice { get; set; }
+    public string movieChoice { get; set; }
 }
