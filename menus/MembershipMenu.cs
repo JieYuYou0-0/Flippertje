@@ -38,7 +38,6 @@ namespace GhibliFlix
         #region Cancel Reservation
         public void CancelReservation()
         {
-
             Log("Cancel Reservation Menu");
 
             PreviousStep = Init;
@@ -59,7 +58,6 @@ namespace GhibliFlix
             int ReservationsAmount = Reservations.reservations.Count;
             for (int i = 0; i < ReservationsAmount; i++)
             {
-                //var open = Reservations.reservations[i];
                 if (Reservations.reservations[i].ReservationId == VerificatieCode)
                 {
                     indexReservation = i;
@@ -73,7 +71,6 @@ namespace GhibliFlix
                 PreviousStep = CancelReservation;
                 ReadBackInput();
             }
-
             DateTime now = DateTime.Now;
             string dateInput = Reservations.reservations[indexReservation].ReservationDate;
             DateTime parsedDate = DateTime.Parse(dateInput);
@@ -94,7 +91,7 @@ namespace GhibliFlix
                 if (keuze == "1")
                 {
                     //Volledig verwijderen
-                    Menu.Log("Ghiblix removes whole reservation");
+                    Menu.Log("GhibliFlix removes reservation");
                     PreviousStep = Init;
 
                     Reservations.reservations[indexReservation].Cancelled = true;
@@ -103,34 +100,33 @@ namespace GhibliFlix
                     File.WriteAllText("jsonFiles/reservations.json", Newjson);
                     Console.WriteLine(Session.Language.ReservationCanceled);
                 }
-                else if (keuze == "2")
-                {
-                    Menu.Log("Ghiblix removes guests from reservation");
-                    PreviousStep = Init;
+                //else if (keuze == "2")
+                //{
+                //    Menu.Log("GhibliFlix removes guests from reservation");
+                //    PreviousStep = Init;
 
-                    //Deels verwijderen
-                    //Console.WriteLine(Session.Language.NamesToRemove);
-                    string namesInput = Console.ReadLine();
-                    char[] delimiterChars = { ' ', ',', '.' };
-                    string[] words = namesInput.Split(delimiterChars);
-                    var Guests = Reservations.reservations[indexReservation].Guests;
-                    for (int i = 0; i < Guests.Count; i++)
-                    {
-                        var GuestName = Guests[i].Name;
-                        foreach (var word in words)
-                        {
-                            if (GuestName.ToLower() == word.ToLower())
-                            {
-                                Guests.RemoveAt(i);
-                            }
-                        }
-                    }
+                //    ////Deels verwijderen
+                //    //string namesInput = Console.ReadLine();
+                //    //char[] delimiterChars = { ' ', ',', '.' };
+                //    //string[] words = namesInput.Split(delimiterChars);
+                //    //var Guests = Reservations.reservations[indexReservation].Guests;
+                //    //for (int i = 0; i < Guests.Count; i++)
+                //    //{
+                //    //    var GuestName = Guests[i].Name;
+                //    //    foreach (var word in words)
+                //    //    {
+                //    //        if (GuestName.ToLower() == word.ToLower())
+                //    //        {
+                //    //            Guests.RemoveAt(i);
+                //    //        }
+                //    //    }
+                //    //}
 
-                    string json2 = JsonSerializer.Serialize(Reservations);
-                    File.WriteAllText("jsonFiles/reservations.json", json2);
+                //    string json2 = JsonSerializer.Serialize(Reservations);
+                //    File.WriteAllText("jsonFiles/reservations.json", json2);
 
-                    Console.WriteLine(Session.Language.ReservationChanged);
-                }
+                //    Console.WriteLine(Session.Language.ReservationChanged);
+                //}
                 else
                 {
                     Console.WriteLine(Session.Language.InvalidInput);
@@ -151,7 +147,7 @@ namespace GhibliFlix
         #region Membership Overview
         public void MembershipOverview()
         {
-            Menu.Log("Ghiblix opens MembershipOverview");
+            Menu.Log("GhibliFlix opens MembershipOverview");
             PreviousStep = Init;
 
             string settingsJson = File.ReadAllText("jsonFiles/memberships.json");

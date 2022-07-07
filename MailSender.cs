@@ -11,13 +11,13 @@ namespace GhibliFlix
             var smtpClient = new SmtpClient("smtp.office365.com")// switch from platform; gmail to office365 (via gmail kon niet meer ivm beveiliging voor derde partij)
             {
                 Port = 587,
-                Credentials = new NetworkCredential("ghibliflix@hotmail.com", "Ghibli123"),
+                Credentials = new NetworkCredential("ghibliflix@outlook.com", "Ghibli123"),
                 EnableSsl = true
             };
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("ghibliflix@hotmail.com"),
+                From = new MailAddress("ghibliflix@outlook.com"),
                 Subject = "Confirmation Mail",
                 Body = htmlBody,
                 IsBodyHtml = true
@@ -36,13 +36,13 @@ namespace GhibliFlix
             var smtpClient = new SmtpClient("smtp.office365.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("ghibliflix@hotmail.com", "Ghibli123"),
+                Credentials = new NetworkCredential("ghibliflix@outlook.com", "Ghibli123"),
                 EnableSsl = true
             };
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("ghibliflix@hotmail.com"),
+                From = new MailAddress("ghibliflix@outlook.com"),
                 Subject = "Verfication mail",
                 Body = htmlBody,
                 IsBodyHtml = true

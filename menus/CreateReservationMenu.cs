@@ -129,8 +129,6 @@ namespace GhibliFlix
             Console.Clear();
             PreviousStep = AskForEmail;
 
-            //var choiceIndex = ReadLine();
-
             while (true)
             {
                 ConsoleKeyInfo input = ReadKey();
@@ -210,7 +208,6 @@ namespace GhibliFlix
                         Console.ReadLine();
                         RenderMovieOptions();
                     }
-
                     return;
                 }
             }

@@ -62,11 +62,10 @@
     "VerificationCodeWrong": "Your verification code is wrong, try again.",
 
     "CancelReservation": "Cancel a reservation\n",
-    "ReservationCancelOptions": "\n[1] - Cancel reservation fully.\n[2] - Cancel reservation partly.\n",
+    "ReservationCancelOptions": "\n[1] - Cancel reservation.\n",
     "InvalidInput": "Your input is invalid.",
     "CancelTooLate": "You cant cancel it anymore, you are too late.",
     "ReservationCanceled": "Your reservation is canceled, we hope to see you another time.",
-    "NamesToRemove": "Enter the names that need to be removed from the reservation separated with a comma. For example: James, Alfred, etc.",
     "ReservationChanged": "Your reservation is changed. Thanks for telling us.",
 
     "ChangeMovieCollection": "To change a menu press: \n\n[1]- Movie1 menu \n[2]- Movie2 menu \n[3]- Movie3 menu\n[4]- Movie4 menu\n[5]- Movie5 menu\n[6]- Movie6 menu\n[7]- Movie7 menu\n[8]- Movie8 menu",
